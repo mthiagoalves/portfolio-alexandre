@@ -1,0 +1,33 @@
+.fontawesome-icons {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+}
+
+.btns-socials {
+    position: absolute;
+    opacity: 0;
+    top: 25%;
+    left: 17%;
+    visibility: hidden;
+    transition: opacity 0.5s ease, left 0.5s ease, visibility 0s 0.5s;
+}
+
+.add-socials {
+    cursor: pointer;
+}
+
+.imagePreview {
+    box-shadow: 0px -3px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-light {
+    display: block;
+    border-radius: 0px;
+    box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.2);
+    margin-top: -5px;
+}
+
+.text-modal-socials {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
