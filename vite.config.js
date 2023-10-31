@@ -4,11 +4,12 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     plugins: [
         laravel({
-            input: [
-                'resources/css/app.css',
-                'resources/js/app.js',
-            ],
+            input: ["resources/css/app.css", "resources/js/app.js"],
+            output: "dist", // Especifica o diretório de saída
             refresh: true,
         }),
     ],
+    build: {
+        outDir: "dist", // Diretório de saída para arquivos de build
+    },
 });
