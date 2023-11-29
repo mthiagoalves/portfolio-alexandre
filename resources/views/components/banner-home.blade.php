@@ -1,9 +1,10 @@
 <div class="container-fluid p-0 opacity-load-banner gradient-bg">
     <div class="width-banner">
         {{-- <div class="blur"></div> --}}
-        {{-- <img src="{{asset('/img/homepage/banner-initial.png')}}" alt="banner" class="img-fluid d-none d-sm-block">
-        <img src="{{asset('/img/homepage/banner-initial-m.png')}}" alt="banner" class="img-fluid d-block d-sm-none"> --}}
         @if (!Route::is('pageHomepage'))
+        <div class="col-12 p-0 text-center position-absolute pic-ale">
+            <img src="{{asset('/img/homepage/banner-initial.png')}}" alt="banner" class="img-fluid">
+        </div>
         <div class="located-in-pt d-none d-sm-block">
             <div class="img-located-in-pt">
                 <div class="digital-ball">
