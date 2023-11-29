@@ -38,8 +38,6 @@ class FrontendController extends Controller
 
     public function test()
     {
-        $projects = HomepageRepository::getAllProjects();
-
-        dd($projects);
+        return view('test');
     }
 }

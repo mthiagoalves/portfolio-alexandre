@@ -1,8 +1,8 @@
-<div class="container-fluid p-0">
-    <div class="col-12 p-0 position-relative">
-        <div class="blur"></div>
-        <img src="{{asset('/img/homepage/banner-initial.png')}}" alt="banner" class="img-fluid d-none d-sm-block">
-        <img src="{{asset('/img/homepage/banner-initial-m.png')}}" alt="banner" class="img-fluid d-block d-sm-none">
+<div class="container-fluid p-0 opacity-load-banner gradient-bg">
+    <div class="width-banner">
+        {{-- <div class="blur"></div> --}}
+        {{-- <img src="{{asset('/img/homepage/banner-initial.png')}}" alt="banner" class="img-fluid d-none d-sm-block">
+        <img src="{{asset('/img/homepage/banner-initial-m.png')}}" alt="banner" class="img-fluid d-block d-sm-none"> --}}
         <div class="located-in-pt d-none d-sm-block">
             <div class="img-located-in-pt">
                 <img src="{{ asset('/img/world.png') }}" alt="world" class="img-fluid rotate-image">
@@ -13,14 +13,24 @@
                 </p>
             </div>
         </div>
-        <div class="text-right-banner">
-            UI/UX Designer <br>
-            Graphic Designer
-        </div>
+        @if (!Route::is('pageHomepage'))
+            <div class="text-right-banner">
+                UI/UX Designer <br>
+                Graphic Designer
+            </div>
+        @endif
         <div class="text-name-main-banner">
             <p>
                 Piedade - Alexandre
             </p>
         </div>
+        @if (Route::is('pageHomepage'))
+            <div class="text-inside-banner">
+                <p>
+                    UI UX Designer - Graphic Designer - Product Designer
+                </p>
+            </div>
+        @endif
     </div>
+    @include('components.gradient-bg')
 </div>

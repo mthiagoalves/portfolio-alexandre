@@ -9,10 +9,79 @@
 body {
     overflow-x: hidden;
 }
-nav {
-    background-color: transparent;
-    z-index: 9999;
-    top: 0;
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+}
+
+:root {
+    --color-bg1: #000000;
+    --color-bg2: #010023;
+    --color1: 251, 0, 30;
+    --color2: 255, 40, 30;
+    --color3: 181, 0, 100;
+    --color4: 181, 0, 100;
+    --color5: 189, 0, 68;
+    --color-interactive: 245, 123, 113;
+    --circle-size: 80%;
+    --circle-interactive-size: 40%;
+    --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
 }
 
 @keyframes rotate {
@@ -23,13 +92,214 @@ nav {
         transform: rotate(360deg);
     }
 }
-@keyframes marquee {
+@keyframes sliderTextLeft {
     0% {
-        transform: translateX(0%);
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-150%);
     }
+}
+
+@keyframes sliderTextRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+
+        transform: translateX(100%);
+    }
+}
+
+nav {
+    background-color: transparent;
+    z-index: 9999;
+    top: 0;
+}
+
+#preloader {
+    height: 0;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+    background: linear-gradient(48deg, var(--color-bg2), var(--color-bg1));
+}
+
+.gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+}
+
+#preloader svg,
+.gradient-bg svg {
+    display: none;
+}
+
+#preloader .gradients-container,
+.gradient-bg .gradients-container {
+    width: 100%;
+    height: 100%;
+}
+
+#preloader .g1,
+.gradient-bg .g1 {
+    position: absolute;
+    background: radial-gradient(
+            circle at center,
+            rgba(var(--color1), 0.8) 0,
+            rgba(var(--color1), 0) 45%
+        )
+        no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    right: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+}
+
+#preloader .g2,
+.gradient-bg .g2 {
+    position: absolute;
+    background: radial-gradient(
+            circle at center,
+            rgba(var(--color2), 0.8) 0,
+            rgba(var(--color2), 0) 45%
+        )
+        no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+    opacity: 1;
+}
+
+#preloader .g3,
+.gradient-bg .g3 {
+    position: absolute;
+    background: radial-gradient(
+            circle at center,
+            rgba(var(--color3), 0.8) 0,
+            rgba(var(--color3), 0) 45%
+        )
+        no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    right: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+    opacity: 1;
+}
+
+#preloader .g4,
+.gradient-bg .g4 {
+    position: absolute;
+    background: radial-gradient(
+            circle at center,
+            rgba(var(--color4), 0.8) 0,
+            rgba(var(--color4), 0) 45%
+        )
+        no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    right: calc(20% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 30s ease infinite;
+    opacity: 1;
+}
+
+#preloader .g5,
+.gradient-bg .g5 {
+    position: absolute;
+    background: radial-gradient(
+            circle at center,
+            rgba(var(--color5), 0.8) 0,
+            rgba(var(--color5), 0) 45%
+        )
+        no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    right: calc(70% - var(--circle-size));
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+    opacity: 1;
+}
+
+.interactive {
+    position: absolute;
+    background: radial-gradient(
+            circle at center,
+            rgba(var(--color-interactive), 0.8) 0,
+            rgba(var(--color-interactive), 0) 45%
+        )
+        no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-interactive-size));
+    height: calc(var(--circle-interactive-size));
+    top: -20%;
+    left: -20%;
+    opacity: 0.7;
+}
+
+.progress-text {
+    color: #ffffff;
+    font-size: 5.5rem;
+    margin: 0;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.div-text-hello {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 90%;
+}
+.title-hello {
+    color: #ffffff;
+    font-size: 12rem;
+    margin: 0;
+    line-height: 1;
+}
+.text-hello {
+    color: #fff;
+    font-size: 3rem;
+    margin: 10px 0.938rem;
+    line-height: 0;
+}
+
+
+
+.opacity-load-nav,
+.opacity-load-banner {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .navbar-brand img {
@@ -63,21 +333,9 @@ a.link-navbar.active {
     box-shadow: none;
 }
 
-.blur {
-    background: url("/img/homepage/banner-initial.png") no-repeat center center
-        fixed;
-    background-size: cover;
-    overflow: hidden;
-    filter: blur(0.938rem);
-    transition: filter 1s;
-    position: absolute;
-    height: 100%;
+.width-banner{
     width: 100%;
-}
-
-.blur.click-blur {
-    filter: blur(0);
-    transition: filter 1s;
+    height: 100vh;
 }
 
 .located-in-pt {
@@ -117,6 +375,7 @@ a.link-navbar.active {
 .img-located-in-pt img {
     width: 80%;
     margin: 0 auto;
+
 }
 
 .text-located-in-pt {
@@ -144,13 +403,27 @@ a.link-navbar.active {
     font-size: 13rem;
     line-height: 15.625rem;
     transition: all 0.5s;
+    animation: sliderTextLeft 12s linear infinite;
+}
+
+.text-inside-banner {
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-inside-banner p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 5rem;
+    line-height: 15.625rem;
+    transition: all 0.5s;
+    animation: sliderTextRight 12s linear infinite;
 }
 
 @media (min-width: 1100px) {
-    .text-name-main-banner:hover {
-        animation: marquee 5s linear infinite;
-    }
-
     .img-located-in-pt img:hover {
         animation: rotate 8s linear infinite;
     }
