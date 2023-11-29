@@ -76,7 +76,6 @@
         move();
     });
 
-
     document.addEventListener("DOMContentLoaded", function() {
         var text = document.querySelector(".progress-text");
         var width = 0;

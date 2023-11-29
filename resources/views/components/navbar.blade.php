@@ -14,15 +14,18 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav text-center">
                 <li class="nav-item my-3 mx-sm-3 d-block d-sm-none">
-                    <a class="" aria-current="page" href="{{ route('pageHomepage') }}">Homepage</a>
+                    <a aria-current="page" href="{{ route('pageHomepage') }}">Homepage</a>
                 </li>
                 <li class="nav-item my-3 mx-sm-3">
-                    <x-nav-link-web class="" aria-current="page" href="{{ route('pageAbout') }}"
+                    <x-nav-link-web aria-current="page" href="{{ route('pageAbout') }}"
                         :active="request()->routeIs('pageAbout')">About</x-nav-link-web>
                 </li>
                 <li class="nav-item my-3 mx-sm-3">
-                    <x-nav-link-web class="" href="{{ route('pageWork') }}"
+                    <x-nav-link-web href="{{ route('pageWork') }}"
                         :active="request()->routeIs('pageWork')">Work</x-nav-link-web>
+                </li>
+                <li class="nav-item my-3 mx-sm-3">
+                    <x-nav-link-web href="#container-footer">Contact</x-nav-link-web>
                 </li>
             </ul>
         </div>

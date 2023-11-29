@@ -3,17 +3,30 @@
         {{-- <div class="blur"></div> --}}
         {{-- <img src="{{asset('/img/homepage/banner-initial.png')}}" alt="banner" class="img-fluid d-none d-sm-block">
         <img src="{{asset('/img/homepage/banner-initial-m.png')}}" alt="banner" class="img-fluid d-block d-sm-none"> --}}
+        @if (!Route::is('pageHomepage'))
         <div class="located-in-pt d-none d-sm-block">
             <div class="img-located-in-pt">
-                <img src="{{ asset('/img/world.png') }}" alt="world" class="img-fluid rotate-image">
+                <div class="digital-ball">
+                    <div class="overlay"></div>
+                    <div class="globe">
+                       <div class="globe-wrap">
+                          <div class="circle"></div>
+                          <div class="circle"></div>
+                          <div class="circle"></div>
+                          <div class="circle-hor"></div>
+                          <div class="circle-hor-middle"></div>
+                       </div>
+                    </div>
+                 </div>
             </div>
+
             <div class="text-located-in-pt">
                 <p>
                     Located in Portugal
+
                 </p>
             </div>
         </div>
-        @if (!Route::is('pageHomepage'))
             <div class="text-right-banner">
                 UI/UX Designer <br>
                 Graphic Designer

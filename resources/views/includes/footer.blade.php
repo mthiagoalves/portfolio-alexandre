@@ -73,7 +73,7 @@
     }
 </style>
 
-<div class="container-fluid pt-5 pb-sm-5 pb-3 p-0 container-footer">
+<div class="container-fluid pt-5 pb-sm-5 pb-3 p-0 container-footer" id="container-footer">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid p-0 offset-sm-footer-1">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
@@ -86,13 +86,18 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item my-3 mx-sm-3 d-block d-sm-none">
-                        <a class="" aria-current="page" href="{{ route('pageHomepage') }}">Homepage</a>
+                        <a aria-current="page" href="{{ route('pageHomepage') }}">Homepage</a>
                     </li>
                     <li class="nav-item my-3 mx-sm-3">
-                        <a class="" aria-current="page" href="{{ route('pageAbout') }}">About</a>
+                        <x-nav-link-web aria-current="page" href="{{ route('pageAbout') }}"
+                            :active="request()->routeIs('pageAbout')">About</x-nav-link-web>
                     </li>
                     <li class="nav-item my-3 mx-sm-3">
-                        <a class="" href="{{ route('pageWork') }}">Work</a>
+                        <x-nav-link-web href="{{ route('pageWork') }}"
+                            :active="request()->routeIs('pageWork')">Work</x-nav-link-web>
+                    </li>
+                    <li class="nav-item my-3 mx-sm-3">
+                        <x-nav-link-web href="#">Contact</x-nav-link-web>
                     </li>
                 </ul>
             </div>

@@ -15,9 +15,10 @@
     .btn-projects {
         text-decoration: none;
         font-size: 1.25rem;
-        border: 0.063rem solid #212529;
+        border: 0.063rem solid #ffffff;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
+        color: #ffffff;
     }
 
     .btn-behance:hover,
