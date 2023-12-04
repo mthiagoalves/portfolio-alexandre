@@ -633,12 +633,15 @@ a.link-navbar.active {
     text-wrap: nowrap;
 }
 
+@media (min-width: 1650px) {
+    .pic-ale {
+        bottom: 0;
+    }
+}
+
 @media (min-width: 1490px) {
     .text-lets-work-together {
         margin-top: 8rem;
-    }
-    .pic-ale {
-        bottom: 0;
     }
 }
 
