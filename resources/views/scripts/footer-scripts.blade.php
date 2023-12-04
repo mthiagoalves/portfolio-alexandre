@@ -59,6 +59,22 @@
         }
     });
 
+    document.addEventListener("mousemove", (e) => {
+        const rastro = document.createElement("div");
+        rastro.className = "rastro";
+        document.body.appendChild(rastro);
+
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        rastro.style.left = mouseX - rastro.clientWidth / 2 + "px";
+        rastro.style.top = mouseY - rastro.clientHeight / 2 + "px";
+
+        setTimeout(() => {
+            document.body.removeChild(rastro);
+        }, 2000);
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
         const interBubble = document.querySelector('.interactive');
         let curX = 0;

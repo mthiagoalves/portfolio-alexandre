@@ -1,6 +1,7 @@
 <style>
     .container-footer {
         background-color: #292a2f;
+        max-height: 100vh;
     }
 
     .text-footer-hyperlink {
@@ -173,6 +174,6 @@
                     <p class="text-footer">©2023</p>
                 </div>
             </div>
-
     </div>
+    @include('components.gradient-bg')
 </div>
