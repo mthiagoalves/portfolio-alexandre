@@ -105,6 +105,15 @@ body {
     }
 }
 
+@keyframes sliderTextLeftFooter {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-500%);
+    }
+}
+
 @keyframes sliderTextRight {
     0% {
         transform: translateX(-150%);
@@ -211,7 +220,7 @@ nav {
             rgba(var(--color1), 0) 45%
         )
         no-repeat;
-    mix-blend-mode: var(--blending);
+    /* mix-blend-mode: var(--blending); */
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -233,7 +242,7 @@ nav {
             rgba(var(--color2), 0) 45%
         )
         no-repeat;
-    mix-blend-mode: var(--blending);
+    /* mix-blend-mode: var(--blending); */
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -253,7 +262,7 @@ nav {
             rgba(var(--color3), 0) 45%
         )
         no-repeat;
-    mix-blend-mode: var(--blending);
+    /* mix-blend-mode: var(--blending); */
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -273,7 +282,7 @@ nav {
             rgba(var(--color4), 0) 45%
         )
         no-repeat;
-    mix-blend-mode: var(--blending);
+    /* mix-blend-mode: var(--blending); */
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -293,7 +302,7 @@ nav {
             rgba(var(--color5), 0) 45%
         )
         no-repeat;
-    mix-blend-mode: var(--blending);
+    /* mix-blend-mode: var(--blending); */
 
     width: calc(var(--circle-size) * 2);
     height: calc(var(--circle-size) * 2);
@@ -448,7 +457,7 @@ a.link-navbar.active {
 
 .text-name-main-banner {
     position: absolute;
-    bottom: 0;
+    bottom: 10%;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -461,7 +470,7 @@ a.link-navbar.active {
     font-size: 13rem;
     line-height: 15.625rem;
     transition: all 0.5s;
-    animation: sliderTextLeft 12s linear infinite;
+    animation: sliderTextLeft 30s linear infinite;
 }
 
 .text-inside-banner {
@@ -478,7 +487,26 @@ a.link-navbar.active {
     font-size: 5rem;
     line-height: 15.625rem;
     transition: all 0.5s;
-    animation: sliderTextRight 12s linear infinite;
+    animation: sliderTextRight 30s linear infinite;
+}
+
+.text-lets-work-together p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 13rem;
+    line-height: 15.625rem;
+    transition: all 0.5s;
+    animation: sliderTextLeftFooter 45s linear infinite;
+    text-wrap: nowrap;
+}
+
+@media (min-width: 1500px) {
+    .text-lets-work-together {
+        margin-top: 4rem;
+    }
+    .pic-ale {
+        bottom: 0;
+    }
 }
 
 @media (min-width: 1100px) {
@@ -501,10 +529,6 @@ a.link-navbar.active {
         border-radius: 1.563rem;
     }
 
-    .blur {
-        background: url("/img/homepage/banner-initial-m.png") no-repeat center
-            center fixed;
-    }
     .text-right-banner {
         bottom: 5%;
     }

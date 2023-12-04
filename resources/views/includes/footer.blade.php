@@ -31,7 +31,7 @@
     }
 
     .local-time-space {
-        margin-top: 7rem;
+        margin-top: 2rem;
     }
 
     .sample-text {
@@ -52,10 +52,17 @@
         font-size: 1.2rem;
         font-weight: 500;
         border-bottom: 1px solid transparent;
+        text-decoration: none;
         transition: ease-in-out .7s;
     }
 
-    .text-socials:hover {
+    .text-socials p{
+        border-bottom: 1px solid transparent;
+        transition: ease-in-out .7s;
+        display: inline-block;
+    }
+
+    .text-socials p:hover {
         border-bottom-color: #ffffff;
     }
 
@@ -73,7 +80,7 @@
     }
 </style>
 
-<div class="container-fluid pt-5 pb-sm-5 pb-3 p-0 container-footer" id="container-footer">
+<div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 container-footer" id="container-footer">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid p-0 offset-sm-footer-1">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
@@ -127,8 +134,12 @@
                 </p>
             </div>
         </div>
-        <div class="local-time-space">
-            <div class="row justify-content-between m-0">
+        <div class="text-lets-work-together">
+            <p>
+                let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together - let’s work together -
+            </p>
+        </div>
+            <div class="row justify-content-between m-0 mt-4">
                 <div class="col-8 p-0">
                     <p class="sample-text">
                         Local Time
@@ -146,7 +157,9 @@
                             @foreach ($socials as $social)
                                 <div class="col-sm-4 col-12 p-0 mr-2">
                                     <a class="text-socials" href="{{ $social->link }}" target="_blank">
-                                        {{ $social->social_name }}
+                                        <p>
+                                            {{ $social->social_name }}
+                                        </p>
                                     </a>
                                 </div>
                             @endforeach
@@ -160,7 +173,6 @@
                     <p class="text-footer">©2023</p>
                 </div>
             </div>
-        </div>
 
     </div>
 </div>
