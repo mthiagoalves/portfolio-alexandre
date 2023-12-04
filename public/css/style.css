@@ -533,15 +533,14 @@ a.link-navbar.active {
         bottom: 5%;
     }
 
-    .text-name-main-banner {
-        bottom: 84%;
-    }
-
     .text-name-main-banner p {
-        font-size: 2.2rem;
+        font-size: 5rem;
         text-align: start;
         padding: 1rem;
         line-height: 4rem;
+    }
+    .text-inside-banner p {
+        font-size: 3rem;
     }
 }
 

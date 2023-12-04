@@ -1,14 +1,21 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <script>
-    // document.querySelector('.blur').addEventListener('click', function() {
-    //     var image = document.querySelector('.blur');
-    //     if (image.classList.contains('click-blur')) {
-    //         image.classList.remove('click-blur');
-    //     } else {
-    //         image.classList.add('click-blur');
-    //     }
-    // });
+    function toggleNavbar() {
+        var navbar = document.querySelector('.opacity-load-nav');
+        var navbarToggler = document.querySelector('.navbar-toggler');
+
+        if (navbarToggler.classList.contains('collapsed')) {
+            navbar.style.background = 'transparent';
+            navbar.style.height = '';
+            navbar.style.display = '';
+        } else {
+            navbar.style.height = '100vh';
+            navbar.style.background = '#45454590';
+            navbar.style.display = 'flex';
+            navbar.style.alignItems = 'start';
+        }
+    }
 
     let isLeftHidden = false;
 
@@ -105,13 +112,13 @@
                     text.style.opacity = 1;
                     if (width <= 33) {
                         text.style.textAlign = 'left';
-                        if(width > 20){
+                        if (width > 20) {
                             text.style.opacity = 0;
                         }
 
                     } else if (width > 33 && width < 93) {
                         text.style.textAlign = 'center';
-                        if(width > 66 && width < 93) {
+                        if (width > 66 && width < 93) {
                             text.style.opacity = 0;
                         }
                     } else {
