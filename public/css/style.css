@@ -98,15 +98,6 @@ body {
 }
 @keyframes sliderTextLeft {
     0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-150%);
-    }
-}
-
-@keyframes sliderTextLeftFooter {
-    0% {
         transform: translateX(0%);
     }
     100% {
@@ -116,10 +107,10 @@ body {
 
 @keyframes sliderTextRight {
     0% {
-        transform: translateX(-150%);
+        transform: translateX(-500%);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
 }
 
@@ -188,7 +179,7 @@ nav {
 }
 
 #preloader {
-    height: 100vh;
+    height: 0;
     width: 100vw;
     position: fixed;
     z-index: 100;
@@ -222,6 +213,7 @@ nav {
 .container-footer .gradients-container {
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 #preloader .g1,
@@ -233,8 +225,6 @@ nav {
             rgba(var(--color1), 0) 45%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
-
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
@@ -255,8 +245,6 @@ nav {
             rgba(var(--color2), 0) 45%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
-
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
@@ -275,8 +263,6 @@ nav {
             rgba(var(--color3), 0) 45%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
-
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2 + 200px);
@@ -295,8 +281,6 @@ nav {
             rgba(var(--color4), 0) 45%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
-
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
@@ -315,8 +299,6 @@ nav {
             rgba(var(--color5), 0) 45%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
-
     width: calc(var(--circle-size) * 2);
     height: calc(var(--circle-size) * 2);
     top: calc(50% - var(--circle-size));
@@ -334,7 +316,6 @@ nav {
             rgba(var(--color1), 0) 30%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
     z-index: 0;
     width: var(--circle-size);
     height: var(--circle-size);
@@ -355,9 +336,7 @@ nav {
             rgba(var(--color2), 0) 30%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
     z-index: 0;
-
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
@@ -375,7 +354,6 @@ nav {
             rgba(var(--color3), 0) 30%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
     z-index: 0;
 
     width: var(--circle-size);
@@ -395,7 +373,6 @@ nav {
             rgba(var(--color4), 0) 30%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
     z-index: 0;
 
     width: var(--circle-size);
@@ -415,7 +392,6 @@ nav {
             rgba(var(--color5), 0) 30%
         )
         no-repeat;
-    /* mix-blend-mode: var(--blending); */
     z-index: 0;
 
     width: calc(var(--circle-size) * 2);
@@ -466,7 +442,7 @@ nav {
     color: #ffffff;
     font-size: 5.5rem;
     margin: 0;
-    text-align: left;
+    text-align: right;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
@@ -602,7 +578,7 @@ a.link-navbar.active {
     font-size: 13rem;
     line-height: 15.625rem;
     transition: all 0.5s;
-    animation: sliderTextLeft 30s linear infinite;
+    animation: sliderTextLeft 45s linear infinite;
 }
 
 .text-inside-banner {
@@ -620,7 +596,7 @@ a.link-navbar.active {
     font-size: 5rem;
     line-height: 15.625rem;
     transition: all 0.5s;
-    animation: sliderTextRight 30s linear infinite;
+    animation: sliderTextRight 45s linear infinite;
 }
 
 .text-lets-work-together p {
@@ -629,7 +605,7 @@ a.link-navbar.active {
     font-size: 13rem;
     line-height: 15.625rem;
     transition: all 0.5s;
-    animation: sliderTextLeftFooter 45s linear infinite;
+    animation: sliderTextLeft 45s linear infinite;
     text-wrap: nowrap;
 }
 
@@ -669,14 +645,25 @@ a.link-navbar.active {
         bottom: 5%;
     }
 
-    .text-name-main-banner p {
-        font-size: 5rem;
+    .text-name-main-banner{
+        bottom: 15%;
+    }
+
+    .text-name-main-banner p,
+    .text-lets-work-together p {
+        font-size: 8rem;
         text-align: start;
         padding: 1rem;
         line-height: 4rem;
     }
+
     .text-inside-banner p {
         font-size: 3rem;
+    }
+
+    .fixed-row {
+        position: absolute;
+        bottom: 0;
     }
 }
 

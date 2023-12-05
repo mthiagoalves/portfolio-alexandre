@@ -99,60 +99,57 @@
         move();
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var text = document.querySelector(".progress-text");
-        var width = 0;
-        var loader = document.getElementById('preloader');
-        const contentNav = document.querySelector(".opacity-load-nav");
-        const contentBanner = document.querySelector(".opacity-load-banner");
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     var text = document.querySelector(".progress-text");
+    //     var width = 0;
+    //     var loader = document.getElementById('preloader');
+    //     const contentNav = document.querySelector(".opacity-load-nav");
+    //     const contentBanner = document.querySelector(".opacity-load-banner");
 
-        if (performance.navigation.type === 1) {
-            loader.style.height = '100vh';
-            contentNav.style.opacity = 0;
-            contentBanner.style.opacity = 0;
-            var id = setInterval(frame, 70);
+    //     if (performance.navigation.type === 1) {
+    //         loader.style.height = '100vh';
+    //         contentNav.style.opacity = 0;
+    //         contentBanner.style.opacity = 0;
+    //         var id = setInterval(frame, 70);
 
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
+    //         function frame() {
+    //             if (width >= 100) {
+    //                 clearInterval(id);
 
-                    setTimeout(function() {
-                        loader.style.opacity = 0;
-                    }, 2000);
-                    setTimeout(function() {
-                        loader.style.display = 'none';
-                        document.body.style.overflowY = 'visible';
-                    }, 2500);
-                } else {
-                    width++;
-                    text.style.opacity = 1;
-                    if (width <= 33) {
-                        text.style.textAlign = 'left';
-                        if (width > 20) {
-                            text.style.opacity = 0;
-                        }
+    //                 setTimeout(function() {
+    //                     loader.style.opacity = 0;
+    //                 }, 2000);
+    //                 setTimeout(function() {
+    //                     loader.style.display = 'none';
+    //                     document.body.style.overflowY = 'visible';
+    //                 }, 2500);
+    //             } else {
+    //                 width++;
+    //                 text.style.opacity = 1;
+    //                 if (width <= 33) {
+    //                     if (width > 20) {
+    //                         text.style.opacity = 0;
+    //                     }
 
-                    } else if (width > 33 && width < 93) {
-                        text.style.textAlign = 'center';
-                        if (width > 66 && width < 93) {
-                            text.style.opacity = 0;
-                        }
-                    } else {
-                        text.style.textAlign = 'right';
-                        text.style.opacity = 1;
-                    }
-                    text.innerHTML = width + '%';
-                    document.body.style.overflowY = 'hidden';
+    //                 } else if (width > 33 && width < 93) {
+    //                     if (width > 66 && width < 93) {
+    //                         text.style.opacity = 0;
+    //                     }
+    //                 } else {
+    //                     text.style.opacity = 1;
+    //                 }
+    //                 text.innerHTML = width + '%';
+    //                 document.body.style.overflowY = 'hidden';
 
-                    if (width == 100) {
-                        setTimeout(function() {
-                            contentNav.style.opacity = 1;
-                            contentBanner.style.opacity = 1;
-                        }, 1500);
+    //                 if (width == 100) {
+    //                     setTimeout(function() {
+    //                         contentNav.style.opacity = 1;
+    //                         contentBanner.style.opacity = 1;
+    //                     }, 1500);
 
-                    }
-                }
-            }
-        }
-    });
+    //                 }
+    //             }
+    //         }
+    //     }
+    // });
 </script>
