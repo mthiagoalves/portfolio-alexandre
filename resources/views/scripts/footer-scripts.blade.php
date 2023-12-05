@@ -43,45 +43,55 @@
         }
     });
 
-    document.addEventListener("mousemove", (e) => {
-        const rastro = document.createElement("div");
-        rastro.className = "rastro";
-        document.body.appendChild(rastro);
+    // document.addEventListener("mousemove", (e) => {
+    //     const rastro = document.createElement("div");
+    //     rastro.className = "rastro";
+    //     document.body.appendChild(rastro);
 
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
+    //     const mouseX = e.clientX;
+    //     const mouseY = e.clientY;
 
-        rastro.style.left = mouseX - rastro.clientWidth / 2 + "px";
-        rastro.style.top = mouseY - rastro.clientHeight / 2 + "px";
+    //     rastro.style.left = mouseX - rastro.clientWidth / 2 + "px";
+    //     rastro.style.top = mouseY - rastro.clientHeight / 2 + "px";
 
-        setTimeout(() => {
-            document.body.removeChild(rastro);
-        }, 2000);
-    });
+    //     setTimeout(() => {
+    //         document.body.removeChild(rastro);
+    //     }, 2000);
+    // });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const interBubble = document.querySelector('.interactive');
-        let curX = 0;
-        let curY = 0;
-        let tgX = 0;
-        let tgY = 0;
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const interBubble = document.querySelector('.interactive');
+    //     let curX = 0;
+    //     let curY = 0;
+    //     let tgX = 0;
+    //     let tgY = 0;
 
-        function move() {
-            curX += (tgX - curX) / 10;
-            curY += (tgY - curY) / 10;
-            interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-            requestAnimationFrame(() => {
-                move();
-            });
-        }
+    //     function move() {
+    //         curX += (tgX - curX) / 10;
+    //         curY += (tgY - curY) / 10;
+    //         interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+    //         requestAnimationFrame(() => {
+    //             move();
+    //         });
+    //     }
 
-        window.addEventListener('mousemove', (event) => {
-            tgX = event.clientX;
-            tgY = event.clientY;
-        });
+    //     window.addEventListener('mousemove', (event) => {
+    //         tgX = event.clientX;
+    //         tgY = event.clientY;
+    //     });
 
-        move();
-    });
+    //     move();
+
+    //     if (window.innerWidth > 1450) {
+    //         var navbarHeight = document.querySelector('.navbar').offsetHeight;
+    //         var footerContent = document.querySelector('.footer-content').offsetHeight;
+    //         document.querySelector('.container-footer').style.height = (navbarHeight + footerContent + 80) +
+    //             'px';
+    //     }
+
+
+
+    // });
 
     // document.addEventListener("DOMContentLoaded", function() {
     //     var text = document.querySelector(".progress-text");

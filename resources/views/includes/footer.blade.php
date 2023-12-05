@@ -1,9 +1,4 @@
 <style>
-    .container-footer {
-        background-color: #292a2f;
-        height: 100vh;
-    }
-
     .text-footer-hyperlink {
         color: #ffffff;
         text-decoration: none;
@@ -73,7 +68,6 @@
         }
     }
 
-
     @media(max-width: 756px) {
         .local-time-space {
             margin-top: 0.8rem;
@@ -82,7 +76,7 @@
 </style>
 
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" style="z-index: 2">
         <div class="container px-sm-0 px-4">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
                 <img src="/img/logo.png" alt="logo" class="img-fluid">
@@ -110,9 +104,9 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-sm-5 p-sm-0 px-3">
+    <div class="container mt-sm-5 p-sm-0 px-3 footer-content">
         <div class="row justify-content-between m-0">
-            <div class="col-sm-8 col-12 my-sm-0 my-4 p-0">
+            <div class="col-sm-8 col-12 my-sm-0 my-4 p-0" style="z-index: 2">
                 <div class="row">
                     <div class="col-sm-6 col-12 my-3 my-sm-0">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="mailto:{{ $content->email }}"
@@ -128,21 +122,21 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0">
+            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0" style="z-index: 2">
                 <p class="text-footer">
                     {!! $content->text_footer !!}
                 </p>
             </div>
-        </div>
-        <div class="text-lets-work-together">
-            <p>
-                let’s work together - let’s work together - let’s work together - let’s work together - let’s work
-                together - let’s work together - let’s work together - let’s work together - let’s work together - let’s
-                work together - let’s work together - let’s work together -
-            </p>
+            <div class="text-lets-work-together col-12 p-0 col-sm-12" style="z-index: 2">
+                <p>
+                    let’s work together - let’s work together - let’s work together - let’s work together - let’s work
+                    together - let’s work together - let’s work together - let’s work together - let’s work together - let’s
+                    work together - let’s work together - let’s work together -
+                </p>
+            </div>
         </div>
         <div class="row justify-content-between m-0 mt-4 fixed-row">
-            <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2">
+            <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2" style="z-index: 2">
                 <div class="row justify-content-between align-items-end m-0">
                     <div class="col-8 p-0">
                         <p class="sample-text">
@@ -157,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-12 p-0 my-sm-0 my-4 order-sm-2 order-1">
+            <div class="col-sm-3 col-12 p-0 my-sm-0 my-4 order-sm-2 order-1" style="z-index: 2">
                 <p class="sample-text">
                     Let's connect
                 </p>

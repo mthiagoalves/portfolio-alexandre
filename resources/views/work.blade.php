@@ -104,6 +104,19 @@
         .tag-projects-overflow {
             font-size: 0.8rem;
         }
+
+        .title-work {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .text-work {
+            font-size: 1.3rem;
+            text-indent: 0;
+            line-height: 1.8rem;
+            letter-spacing: 0rem;
+        }
+
     }
 
     /* end card projects */
@@ -111,7 +124,7 @@
 
 <x-master-layout>
     <x-slot name="content">
-        <div class="container p-0 my-5">
+        <div class="container p-0 container-work mb-5">
             <div class="row justify-content-between m-0 mt-5">
                 <div class="col-sm-2 col-12 ">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -134,8 +147,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center align-items-center m-0 mt-5">
-                <div class="col-sm-2 col-12 ">
+            <div class="row justify-content-center align-items-center m-0 mt-sm-5 mt-3">
+                <div class="col-sm-2 col-12 d-none d-sm-block">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
                         <a href="" class="btn-behance p-2 px-3">
                             Behance
@@ -150,7 +163,7 @@
                                     <img src="https://dummyimage.com/580x750/4c6951/fff" alt=""
                                         class="img-fluid img-slide-projects">
                                     <div class="overflow">
-                                        <div class="content p-5">
+                                        <div class="content p-5 d-none d-sm-block">
                                             <h3 class="title-project-overflow">{{ $project->title }}</h3>
                                             <p class="description-project-overflow d-sm-block d-none">
                                                 {{ $project->description }}
@@ -187,5 +200,13 @@
             </div>
         </div>
         @include('includes.footer')
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                var navbarHeight = document.querySelector('.navbar').offsetHeight;
+                document.querySelector('.container-work').style.marginTop = navbarHeight * 2 + 'px';
+
+            });
+        </script>
     </x-slot>
 </x-master-layout>
