@@ -575,7 +575,7 @@ a.link-navbar.active {
 .text-name-main-banner p {
     color: #ffffff;
     text-align: center;
-    font-size: 13rem;
+    font-size: 10rem;
     line-height: 15.625rem;
     transition: all 0.5s;
     animation: sliderTextLeft 45s linear infinite;
@@ -663,6 +663,10 @@ a.link-navbar.active {
 
     .fixed-row {
         position: absolute;
+        bottom: 0;
+    }
+
+    .pic-ale {
         bottom: 0;
     }
 }

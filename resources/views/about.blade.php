@@ -21,23 +21,60 @@
         font-weight: 500;
     }
 
-    .text-work-experience,
-    {
-    font-size: 1.25rem;
+    .text-work-experience {
+        font-size: 1.25rem;
+        margin: 0;
     }
 
     .btn-lkd,
     .btn-skills {
         text-decoration: none;
         font-size: 1.25rem;
-        border: 0.063rem solid #212529;
+        border: 0.063rem solid #ffffff;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
+        color: #ffffff;
     }
 
     .btn-lkd:hover,
     .btn-skills:hover {
-        background-color: #21252920
+        background-color: #ffffff20
+    }
+
+    @media(min-width: 756px) {
+        .text-name-main-banner {
+            bottom: 0% !important;
+        }
+    }
+
+
+    @media(max-width: 756px) {
+
+        .title-about-me,
+        .title-work-experience,
+        .title-skills,
+        .title-languages {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+
+        .text-about-me,
+        .text-skills,
+        .text-languages {
+            font-size: 1.3rem;
+            text-indent: 0;
+            line-height: 1.8rem;
+            letter-spacing: 0rem;
+        }
+
+        .subtitle-work-experience {
+            margin: 0;
+        }
+
+        .border-div {
+            border-top: 1px solid #ffffff20;
+        }
     }
 </style>
 
@@ -68,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-between align-items-center m-0 mt-5">
+            <div class="row justify-content-between m-0 mt-5">
                 <div class="col-sm-2 col-12">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
                         <p class="title-work-experience">
@@ -76,32 +113,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-10 p-0">
-                    <div class="row m-0">
-                        <div class="col-sm-2 col-12">
-                            <div class="col-12 p-2 col-sm-12 p-sm-0">
-                                <p class="subtitle-work-experience">
-                                    Present - 2017
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-12">
-                            <div class="col-12 p-2 col-sm-12 p-sm-0">
-                                <p class="subtitle-work-experience">
-                                    Freelancer
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                            <div class="col-11 p-2 col-sm-12 p-sm-0">
-                                <p class="text-work-experience">
-                                    Designer
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 p-0 pb-sm-0 pb-3">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -127,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -151,7 +163,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -174,7 +186,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
+                    <div class="row m-0">
+                        <div class="col-sm-2 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    2017 - Present
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">Freelancer</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="col-11 p-2 col-sm-12 p-sm-0">
+                                <p class="text-work-experience">
+                                    Designer
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -197,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -220,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5 text-sm-start text-center">
                     <a href="#" class="btn-lkd p-2 px-3">
                         Wanna see my Linkedin?
                     </a>
@@ -244,9 +279,113 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-10 offset-2 p-0 mt-5">
+            </div>
+            <div class="row justify-content-between m-0 mt-5">
+                <div class="col-sm-2 col-12">
+                    <div class="col-12 p-2 col-sm-12 p-sm-0">
+                        <p class="title-work-experience">
+                            Education
+                        </p>
+                    </div>
+                </div>
+                <div class="col-10 p-0">
+                    <div class="row m-0">
+                        <div class="col-sm-2 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    2023
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    EDIT. - Disruptive Digital Education
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="col-11 p-2 col-sm-12 p-sm-0">
+                                <p class="text-work-experience">
+                                    Postgrad in User Experience & User Interface Design
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5">
+                    <div class="row m-0">
+                        <div class="col-sm-2 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    2019 - 2021
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    University of Porto <br> FBAUP / FEUP</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="col-11 p-2 col-sm-12 p-sm-0">
+                                <p class="text-work-experience">
+                                    Master’s degree in Industrial and Product Design
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5">
+                    <div class="row m-0">
+                        <div class="col-sm-2 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    2016 - 2019
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">ESAD - Matosinhos</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="col-11 p-2 col-sm-12 p-sm-0">
+                                <p class="text-work-experience">
+                                    Bachelor’s degree in Graphic & Communication Design
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5">
+                    <div class="row m-0">
+                        <div class="col-sm-2 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">
+                                    2013 - 2016
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                            <div class="col-12 p-2 col-sm-12 p-sm-0">
+                                <p class="subtitle-work-experience">EASR - Porto</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <div class="col-11 p-2 col-sm-12 p-sm-0">
+                                <p class="text-work-experience">
+                                    Artistic Course, Specialized in Graphic Design
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5 text-sm-start text-center">
                     <a href="#" class="btn-skills p-2 px-3">
-                        Wanna see my Linkedin?
+                        Wanna see some projects?
                     </a>
                 </div>
             </div>

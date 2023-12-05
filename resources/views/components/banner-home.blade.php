@@ -1,50 +1,73 @@
-<div class="container-fluid p-0 opacity-load-banner gradient-bg">
-    <div class="width-banner">
-        @if (!Route::is('pageHomepage'))
-        <div class="col-12 p-0 text-center position-absolute pic-ale">
-            <img src="{{asset('/img/homepage/banner-initial.png')}}" alt="banner" class="img-fluid m-auto d-none d-sm-block">
-            <img src="{{asset('/img/homepage/banner-initial-m.png')}}" alt="banner" class="img-fluid m-auto d-block d-sm-none">
-        </div>
-        <div class="located-in-pt d-none d-sm-block">
-            <div class="img-located-in-pt">
-                <div class="digital-ball">
-                    <div class="overlay"></div>
-                    <div class="globe">
-                       <div class="globe-wrap">
-                          <div class="circle"></div>
-                          <div class="circle"></div>
-                          <div class="circle"></div>
-                          <div class="circle-hor"></div>
-                          <div class="circle-hor-middle"></div>
-                       </div>
+@if (!Route::is('pageWork'))
+    <div class="container-fluid p-0 opacity-load-banner gradient-bg">
+        <div class="width-banner">
+            @if (!Route::is('pageHomepage'))
+                <div class="col-12 p-0 text-center position-absolute pic-ale">
+                    <img src="{{ asset('/img/homepage/banner-initial.png') }}" alt="banner"
+                        class="img-fluid m-auto d-none d-sm-block">
+                    <img src="{{ asset('/img/homepage/banner-initial-m.png') }}" alt="banner"
+                        class="img-fluid m-auto d-block d-sm-none">
+                </div>
+                <div class="located-in-pt d-none d-sm-block">
+                    <div class="img-located-in-pt">
+                        <div class="digital-ball">
+                            <div class="overlay"></div>
+                            <div class="globe">
+                                <div class="globe-wrap">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle-hor"></div>
+                                    <div class="circle-hor-middle"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                 </div>
-            </div>
 
-            <div class="text-located-in-pt">
+                    <div class="text-located-in-pt">
+                        <p>
+                            Located in Portugal
+
+                        </p>
+                    </div>
+                </div>
+                @if (!Route::is('pageHomepage'))
+                    <div class="text-right-banner d-sm-block d-none">
+                        UI/UX Designer <br>
+                        Graphic Designer
+                    </div>
+                @endif
+            @endif
+            <div class="text-name-main-banner">
                 <p>
-                    Located in Portugal
-
+                    Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre
                 </p>
             </div>
+            @if (Route::is('pageHomepage'))
+                <div class="text-inside-banner">
+                    <p>
+                        UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer -
+                        Product
+                        Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic
+                        Designer
+                        -
+                        Product Designer
+                    </p>
+                </div>
+            @else
+                <div class="text-inside-banner d-block d-sm-none">
+                    <p>
+                        UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer -
+                        Product
+                        Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic
+                        Designer
+                        -
+                        Product Designer
+                    </p>
+                </div>
+            @endif
+
         </div>
-            <div class="text-right-banner">
-                UI/UX Designer <br>
-                Graphic Designer
-            </div>
-        @endif
-        <div class="text-name-main-banner">
-            <p>
-                Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre
-            </p>
-        </div>
-        @if (Route::is('pageHomepage'))
-            <div class="text-inside-banner">
-                <p>
-                    UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer
-                </p>
-            </div>
-        @endif
+        @include('components.gradient-bg')
     </div>
-    @include('components.gradient-bg')
-</div>
+@endif

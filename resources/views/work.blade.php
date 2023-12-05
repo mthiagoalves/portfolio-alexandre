@@ -94,6 +94,12 @@
         transition: ease-in-out 0.7s;
     }
 
+    @media(min-width: 756px) {
+        .text-name-main-banner {
+            bottom: 0% !important;
+        }
+    }
+
     @media(max-width: 756px) {
         .tag-projects-overflow {
             font-size: 0.8rem;

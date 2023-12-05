@@ -18,39 +18,16 @@
         }
 
         @media(max-width: 756px) {
-            .container-text-in-mobile {
-                position: relative;
-                height: 220px;
-            }
 
-            .text-left-after-banner {
-                font-size: 1.5rem;
+            .text-left-after-banner,
+            .text-right-after-banner {
+                font-size: 1.4rem;
                 line-height: 1.758rem;
-                text-align: justify;
-                text-align-last: left;
+                text-align: start;
             }
 
             .text-right-after-banner {
-                text-align: justify;
-                text-align-last: right;
-            }
-
-            .div-text-left-in-mobile {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transition: all 0.5s ease 0s;
-            }
-
-            .div-text-right-in-mobile {
-                position: absolute;
-                top: 0;
-                left: 100vw;
-                transition: all 0.5s ease 0s;
-            }
-
-            .text-in-mobile {
-                display: flex;
+                font-size: 1.2rem;
             }
 
             .arrows {
@@ -66,30 +43,20 @@
 
 <x-master-layout>
     <x-slot name="content" class="page1">
-        <div class="container p-0 my-5 container-text-in-mobile">
+        <div class="container p-0 my-5">
             <div class="row justify-content-between m-0">
-                <div class="col-sm-8 col-12 div-text-left-in-mobile">
-                    <div class="text-in-mobile">
-                        <div class="col-11 p-2 col-sm-12 p-sm-0">
-                            <p class="text-left-after-banner">
-                                {!! $content->first_text !!}
-                            </p>
-                        </div>
-                        <div class="col-1 p-2 d-block d-sm-none arrows">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
+                <div class="col-sm-8 col-12">
+                    <div class="col-11 p-2 col-sm-12 p-sm-0">
+                        <p class="text-left-after-banner">
+                            {!! $content->first_text !!}
+                        </p>
                     </div>
                 </div>
-                <div class="col-sm-3 col-12 div-text-right-in-mobile">
-                    <div class="text-in-mobile">
-                        <div class="col-1 p-2 d-block d-sm-none arrows">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </div>
-                        <div class="col-11 p-2 col-sm-12 p-sm-0">
-                            <p class="text-right-after-banner">
-                                {!! $content->second_text !!}
-                            </p>
-                        </div>
+                <div class="col-sm-3 col-12">
+                    <div class="col-11 p-2 col-sm-12 p-sm-0">
+                        <p class="text-right-after-banner">
+                            {!! $content->second_text !!}
+                        </p>
                     </div>
                 </div>
             </div>

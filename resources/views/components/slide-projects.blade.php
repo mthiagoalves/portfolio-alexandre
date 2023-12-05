@@ -25,7 +25,7 @@
         height: 100%;
         top: 0;
         background-color: #2024238a;
-        border-radius: 1.563rem;
+        border-radius: .9rem;
         transition: ease-in-out .7s;
     }
 
@@ -34,7 +34,7 @@
     }
 
     .img-slide-projects {
-        border-radius: 1.563rem;
+        border-radius: .9rem;
     }
 
     .title-project-overflow {
@@ -76,7 +76,7 @@
         text-decoration: none;
         font-size: 1rem;
         border: 1px solid #ffffff;
-        border-radius: 1.563rem;
+        border-radius: .9rem;
         transition: ease-in-out 0.7s;
     }
 
@@ -119,7 +119,7 @@
             </div>
         @endforeach
 
-        <div class="swiper-slide">
+        <div class="swiper-slide d-sm-block d-none">
             <div class="slide-projects">
             </div>
         </div>
