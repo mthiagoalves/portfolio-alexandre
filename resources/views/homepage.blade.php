@@ -42,7 +42,7 @@
 
 <x-master-layout>
     <x-slot name="content" class="page1">
-        <div class="container p-0 my-5">
+        <div class="container p-0 my-5 give-margin">
             <div class="row justify-content-between m-0">
                 <div class="col-sm-8 col-12">
                     <div class="col-11 p-2 col-sm-12 p-sm-0">
@@ -61,9 +61,10 @@
             </div>
         </div>
 
-        <div class="container-fluid offset-sm-1 p-sm-0 my-5">
+        <div class="container-fluid p-sm-0 my-5 receive-margin">
             @include('components.slide-projects')
         </div>
+
         @include('includes.footer')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </x-slot>

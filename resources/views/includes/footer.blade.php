@@ -75,7 +75,7 @@
     }
 </style>
 
-<div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer canvasContainer" id="container-footer">
+<div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
     <nav class="navbar navbar-expand-lg" style="z-index: 2">
         <div class="container px-sm-0 px-4">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">

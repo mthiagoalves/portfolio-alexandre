@@ -15,7 +15,7 @@
     <main>
         {{ $content }}
     </main>
-
+    <div class="interactive"></div>
     @include('scripts.footer-scripts')
 </body>
 

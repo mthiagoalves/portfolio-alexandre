@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     function initializeCanvas(containerId) {
-        const container = document.querySelector('.' + containerId);
+        const container = document.querySelector("." + containerId);
 
         // Verifica se o contêiner existe
         if (!container) {
@@ -8,15 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Cria um novo canvas
         const canvas = document.createElement("canvas");
         container.appendChild(canvas);
 
-        // Configura as dimensões do canvas
         canvas.width = container.clientWidth;
         canvas.height = container.clientHeight;
 
-        // Restante da lógica do canvas, incluindo event listeners e WebGL setup...
         let config = {
             TEXTURE_DOWNSAMPLE: 2,
             DENSITY_DISSIPATION: 0.98,
@@ -24,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             PRESSURE_DISSIPATION: 0.9,
             PRESSURE_ITERATIONS: 30,
             CURL: 30,
-            SPLAT_RADIUS: 0.005,
+            SPLAT_RADIUS: 0.008,
         };
 
         let pointers = [];
@@ -894,7 +891,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const color = [
                     1.0 - gradient * 0.5 + blueEdge[0] * gradient,
                     gradient * 0.5 + blueEdge[1] * gradient,
-                    blueEdge[2] * gradient
+                    blueEdge[2] * gradient,
                 ];
                 const x = canvas.width * Math.random();
                 const y = canvas.height * Math.random();
@@ -943,7 +940,7 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.addEventListener("mousemove", () => {
             pointers[0].down = true;
             const gradient = Math.random() * 0.5; // Ajuste conforme necessário
-            const blueEdge = [0, 0, 0.9];
+            const blueEdge = [.5, 0, 1];
             pointers[0].color = [
                 1.0 - gradient * 0.5 + blueEdge[0] * gradient,
                 gradient * 0.5 + blueEdge[1] * gradient,
@@ -962,7 +959,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 pointers[i].x = touches[i].pageX;
                 pointers[i].y = touches[i].pageY;
                 const gradient = Math.random() * 0.5; // Ajuste conforme necessário
-                const blueEdge = [0, 0, 0.9];
+                const blueEdge = [.5, 0, 1];
                 pointers[i].color = [
                     1.0 - gradient * 0.5 + blueEdge[0] * gradient,
                     gradient * 0.5 + blueEdge[1] * gradient,
@@ -985,7 +982,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return canvas;
     }
-    initializeCanvas("gradient-bg");
-    initializeCanvas("container-footer");
-    initializeCanvas("preloader");
+
+    window.addEventListener("DOMContentLoaded", function () {
+        initializeCanvas("gradient-bg");
+        initializeCanvas("container-footer");
+        initializeCanvas("preloader");
+    });
 });
