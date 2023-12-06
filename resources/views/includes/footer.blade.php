@@ -75,7 +75,7 @@
     }
 </style>
 
-<div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
+<div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer canvasContainer" id="container-footer">
     <nav class="navbar navbar-expand-lg" style="z-index: 2">
         <div class="container px-sm-0 px-4">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0" style="z-index: 2">
+            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0 disable-events" style="z-index: 2">
                 <p class="text-footer">
                     {!! $content->text_footer !!}
                 </p>
@@ -136,7 +136,7 @@
             </div>
         </div>
         <div class="row justify-content-between m-0 mt-4 fixed-row">
-            <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2" style="z-index: 2">
+            <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2 disable-events" style="z-index: 2">
                 <div class="row justify-content-between align-items-end m-0">
                     <div class="col-8 p-0">
                         <p class="sample-text">
@@ -166,7 +166,7 @@
                                 </a>
                             </div>
                         @endforeach
-                        <div class="col-sm-4 col-12 text-end d-none d-sm-block">
+                        <div class="col-sm-4 col-12 text-end d-none d-sm-block disable-events">
                             <p>©2023</p>
                         </div>
                     </div>

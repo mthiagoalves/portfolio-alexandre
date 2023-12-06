@@ -74,9 +74,9 @@
     .tag-projects-overflow {
         color: #ffffff;
         text-decoration: none;
-        font-size: 1rem;
+        font-size: .9rem;
         border: 1px solid #ffffff;
-        border-radius: .9rem;
+        border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
     }
 

@@ -178,8 +178,8 @@ nav {
     top: 0;
 }
 
-#preloader {
-    height: 0;
+.preloader {
+    height: 100vh;
     width: 100vw;
     position: fixed;
     z-index: 100;
@@ -203,13 +203,13 @@ nav {
     background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
 }
 
-#preloader svg,
+.preloader svg,
 .gradient-bg svg,
 .container-footer svg {
     display: none;
 }
 
-#preloader .gradients-container,
+.preloader .gradients-container,
 .gradient-bg .gradients-container,
 .container-footer .gradients-container {
     width: 100%;
@@ -217,7 +217,7 @@ nav {
     pointer-events: none;
 }
 
-#preloader .g1,
+.preloader .g1,
 .gradient-bg .g1 {
     position: absolute;
     background: radial-gradient(
@@ -235,9 +235,10 @@ nav {
     animation: moveVertical 30s ease infinite;
 
     opacity: 1;
+    z-index: 1;
 }
 
-#preloader .g2,
+.preloader .g2,
 .gradient-bg .g2 {
     position: absolute;
     background: radial-gradient(
@@ -253,9 +254,10 @@ nav {
     transform-origin: calc(50% - 400px);
     animation: moveInCircle 20s reverse infinite;
     opacity: 1;
+    z-index: 1;
 }
 
-#preloader .g3,
+.preloader .g3,
 .gradient-bg .g3 {
     position: absolute;
     background: radial-gradient(
@@ -271,9 +273,10 @@ nav {
     transform-origin: calc(50% + 400px);
     animation: moveInCircle 40s linear infinite;
     opacity: 1;
+    z-index: 1;
 }
 
-#preloader .g4,
+.preloader .g4,
 .gradient-bg .g4 {
     position: absolute;
     background: radial-gradient(
@@ -289,9 +292,10 @@ nav {
     transform-origin: calc(50% - 200px);
     animation: moveHorizontal 30s ease infinite;
     opacity: 1;
+    z-index: 1;
 }
 
-#preloader .g5,
+.preloader .g5,
 .gradient-bg .g5 {
     position: absolute;
     background: radial-gradient(
@@ -307,6 +311,7 @@ nav {
     transform-origin: calc(50% - 800px) calc(50% + 200px);
     animation: moveInCircle 20s ease infinite;
     opacity: 1;
+    z-index: 1;
 }
 
 .container-footer .g1 {
@@ -317,7 +322,7 @@ nav {
             rgba(var(--color1), 0) 30%
         )
         no-repeat;
-    z-index: 0;
+    z-index: 1;
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
@@ -337,7 +342,7 @@ nav {
             rgba(var(--color2), 0) 30%
         )
         no-repeat;
-    z-index: 0;
+    z-index: 1;
     width: var(--circle-size);
     height: var(--circle-size);
     top: calc(50% - var(--circle-size) / 2);
@@ -355,7 +360,7 @@ nav {
             rgba(var(--color3), 0) 30%
         )
         no-repeat;
-    z-index: 0;
+    z-index: 1;
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -374,7 +379,7 @@ nav {
             rgba(var(--color4), 0) 30%
         )
         no-repeat;
-    z-index: 0;
+    z-index: 1;
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -393,8 +398,7 @@ nav {
             rgba(var(--color5), 0) 30%
         )
         no-repeat;
-    z-index: 0;
-
+    z-index: 1;
     width: calc(var(--circle-size) * 2);
     height: calc(var(--circle-size) * 2);
     top: calc(50% - var(--circle-size));
@@ -404,7 +408,7 @@ nav {
     opacity: 1;
 }
 
-.interactive {
+/* .interactive {
     position: absolute;
     background: radial-gradient(
             circle at center,
@@ -419,9 +423,20 @@ nav {
     top: -20%;
     left: -20%;
     opacity: 0.7;
+} */
+
+.canvas-container {
+    position: relative;
 }
 
-.rastro {
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* .rastro {
     position: absolute;
     background: radial-gradient(
             circle at center,
@@ -430,14 +445,13 @@ nav {
         )
         no-repeat;
     mix-blend-mode: var(--blending);
-
     width: calc(var(--circle-interactive-size) / 2);
     height: calc(var(--circle-interactive-size) / 2);
     animation: fadeOut 2s ease-out forwards;
     top: -20%;
     left: -20%;
     opacity: 0.7;
-}
+} */
 
 .progress-text {
     color: #ffffff;
@@ -453,6 +467,8 @@ nav {
     bottom: 5%;
     left: 5%;
     width: 90%;
+    z-index: 1;
+    pointer-events: none;
 }
 .title-hello {
     color: #ffffff;
@@ -511,12 +527,12 @@ a.link-navbar.active {
 }
 
 .pic-ale {
-    z-index: 1;
+    z-index: 2;
 }
 
 .located-in-pt {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     background-color: #3e3f436e;
     bottom: 45%;
     width: 18rem;
@@ -530,7 +546,7 @@ a.link-navbar.active {
 
 .text-right-banner {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     bottom: 47%;
     right: 3%;
     color: #ffffff;
@@ -571,7 +587,7 @@ a.link-navbar.active {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    z-index: 2;
+    z-index: 3;
 }
 
 .text-name-main-banner p {
@@ -589,7 +605,7 @@ a.link-navbar.active {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    z-index: 2;
+    z-index: 3;
 }
 
 .text-inside-banner p {
@@ -599,6 +615,11 @@ a.link-navbar.active {
     line-height: 15.625rem;
     transition: all 0.5s;
     animation: sliderTextRight 45s linear infinite;
+}
+
+.text-lets-work-together,
+.disable-events{
+    pointer-events: none;
 }
 
 .text-lets-work-together p {
@@ -650,7 +671,7 @@ a.link-navbar.active {
         bottom: 5%;
     }
 
-    .text-name-main-banner{
+    .text-name-main-banner {
         bottom: 15%;
     }
 
@@ -691,6 +712,7 @@ a.link-navbar.active {
     left: 32px;
     transform: translate(-50%, -50%);
     position: absolute;
+    z-index: 1;
     overflow: hidden;
     background: var(--color-blue);
 }
@@ -707,6 +729,7 @@ a.link-navbar.active {
 
 .globe {
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 50%;
     width: 3em;
@@ -723,6 +746,7 @@ a.link-navbar.active {
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 1;
     display: block;
     border-radius: 50%;
     transform: translate(-50%, -50%) rotate(30deg);
@@ -742,6 +766,7 @@ a.link-navbar.active {
     box-shadow: inset 0.1em 0px 0px 0.08em var(--color-white);
     animation: circle1 2.7s linear infinite;
     font-size: 0.75em;
+    z-index: 1;
 }
 
 .globe :nth-child(1) {
@@ -762,6 +787,7 @@ a.link-navbar.active {
     height: 55%;
     box-shadow: inset 0px 0px 0px 0.15em var(--color-white);
     font-size: 0.75em;
+    z-index: 1;
 }
 
 .globe .circle-hor-middle {
@@ -774,6 +800,7 @@ a.link-navbar.active {
     height: 0.15em;
     background: var(--color-white);
     font-size: 0.75em;
+    z-index: 1;
 }
 
 @media screen and (max-width: 1000px) {

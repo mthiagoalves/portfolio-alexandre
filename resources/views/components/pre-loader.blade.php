@@ -1,4 +1,4 @@
-<div id="preloader">
+<div id="canvasContainer" class="preloader">
     <div class="div-text-hello">
         <div class="row m-0 align-items-center">
             <div class="col-12 p-0 title-hello">

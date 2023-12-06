@@ -1,5 +1,5 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+<script src="/js/cursor-script.js"></script>
 <script>
     function toggleNavbar() {
         var navbar = document.querySelector('.opacity-load-nav');
@@ -23,7 +23,7 @@
         spaceBetween: 15,
         initialSlide: 0,
         breakpoints: {
-            1400: {
+            1500: {
                 slidesPerView: 4
             },
             1200: {
@@ -59,91 +59,116 @@
     //     }, 2000);
     // });
 
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     const interBubble = document.querySelector('.interactive');
-    //     let curX = 0;
-    //     let curY = 0;
-    //     let tgX = 0;
-    //     let tgY = 0;
+    document.addEventListener('DOMContentLoaded', () => {
+        // const interBubble = document.querySelector('.interactive');
+        // let curX = 0;
+        // let curY = 0;
+        // let tgX = 0;
+        // let tgY = 0;
 
-    //     function move() {
-    //         curX += (tgX - curX) / 10;
-    //         curY += (tgY - curY) / 10;
-    //         interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-    //         requestAnimationFrame(() => {
-    //             move();
-    //         });
-    //     }
+        // function move() {
+        //     curX += (tgX - curX) / 10;
+        //     curY += (tgY - curY) / 10;
+        //     interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+        //     requestAnimationFrame(() => {
+        //         move();
+        //     });
+        // }
 
-    //     window.addEventListener('mousemove', (event) => {
-    //         tgX = event.clientX;
-    //         tgY = event.clientY;
-    //     });
+        // window.addEventListener('mousemove', (event) => {
+        //     tgX = event.clientX;
+        //     tgY = event.clientY;
+        // });
 
-    //     move();
+        // move();
 
-    //     if (window.innerWidth > 1450) {
-    //         var navbarHeight = document.querySelector('.navbar').offsetHeight;
-    //         var footerContent = document.querySelector('.footer-content').offsetHeight;
-    //         document.querySelector('.container-footer').style.height = (navbarHeight + footerContent + 80) +
-    //             'px';
-    //     }
+        if (window.innerWidth > 1450) {
+            var navbarHeight = document.querySelector('.navbar').offsetHeight;
+            var footerContent = document.querySelector('.footer-content').offsetHeight;
+            document.querySelector('.container-footer').style.height = (navbarHeight + footerContent + 80) +
+                'px';
+        }
 
 
 
-    // });
+    });
 
-    // document.addEventListener("DOMContentLoaded", function() {
-    //     var text = document.querySelector(".progress-text");
-    //     var width = 0;
-    //     var loader = document.getElementById('preloader');
-    //     const contentNav = document.querySelector(".opacity-load-nav");
-    //     const contentBanner = document.querySelector(".opacity-load-banner");
+    document.addEventListener("DOMContentLoaded", function() {
+        let splatInterval;
 
-    //     if (performance.navigation.type === 1) {
-    //         loader.style.height = '100vh';
-    //         contentNav.style.opacity = 0;
-    //         contentBanner.style.opacity = 0;
-    //         var id = setInterval(frame, 70);
+        function startSplatGeneration() {
+            // Configure o intervalo para chamar multipleSplats a cada 5000 milissegundos (5 segundos)
+            splatInterval = setInterval(function() {
+                // Gere um número aleatório de splats (por exemplo, entre 1 e 3)
+                const numSplats = parseInt(Math.random() * 20) + 5;
+                multipleSplats(numSplats);
+            }, 5000); // Intervalo de 5000 milissegundos (5 segundos)
+        }
 
-    //         function frame() {
-    //             if (width >= 100) {
-    //                 clearInterval(id);
+        // Função para parar a geração periódica de splats
+        function stopSplatGeneration() {
+            clearInterval(splatInterval);
+        }
 
-    //                 setTimeout(function() {
-    //                     loader.style.opacity = 0;
-    //                 }, 2000);
-    //                 setTimeout(function() {
-    //                     loader.style.display = 'none';
-    //                     document.body.style.overflowY = 'visible';
-    //                 }, 2500);
-    //             } else {
-    //                 width++;
-    //                 text.style.opacity = 1;
-    //                 if (width <= 33) {
-    //                     if (width > 20) {
-    //                         text.style.opacity = 0;
-    //                     }
+        // Exemplo de uso:
+        // Inicie a geração periódica quando desejar (por exemplo, ao carregar a página)
+        startSplatGeneration();
 
-    //                 } else if (width > 33 && width < 93) {
-    //                     if (width > 66 && width < 93) {
-    //                         text.style.opacity = 0;
-    //                     }
-    //                 } else {
-    //                     text.style.opacity = 1;
-    //                 }
-    //                 text.innerHTML = width + '%';
-    //                 document.body.style.overflowY = 'hidden';
+        // Pare a geração periódica após um certo tempo (por exemplo, após 30 segundos)
+        setTimeout(function() {
+            stopSplatGeneration();
+        }, 3000); // 30000 milissegundos (30 segundos)
 
-    //                 if (width == 100) {
-    //                     setTimeout(function() {
-    //                         contentNav.style.opacity = 1;
-    //                         contentBanner.style.opacity = 1;
-    //                     }, 1500);
+        var text = document.querySelector(".progress-text");
+        var width = 0;
+        var loader = document.querySelector('.preloader');
+        const contentNav = document.querySelector(".opacity-load-nav");
+        const contentBanner = document.querySelector(".opacity-load-banner");
 
-    //                 }
-    //             }
-    //         }
-    //     }
-    // });
+        if (performance.navigation.type === 1) {
+            loader.style.height = '100vh';
+            contentNav.style.opacity = 0;
+            contentBanner.style.opacity = 0;
+            var id = setInterval(frame, 70);
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+
+                    setTimeout(function() {
+                        loader.style.opacity = 0;
+                    }, 2000);
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                        document.body.style.overflowY = 'visible';
+                    }, 2500);
+                } else {
+                    width++;
+                    text.style.opacity = 1;
+                    if (width <= 33) {
+                        if (width > 20) {
+                            text.style.opacity = 0;
+                        }
+
+                    } else if (width > 33 && width < 93) {
+                        if (width > 66 && width < 93) {
+                            text.style.opacity = 0;
+                        }
+                    } else {
+                        text.style.opacity = 1;
+                    }
+                    text.innerHTML = width + '%';
+                    document.body.style.overflowY = 'hidden';
+
+                    if (width == 100) {
+                        setTimeout(function() {
+                            contentNav.style.opacity = 1;
+                            contentBanner.style.opacity = 1;
+                        }, 1500);
+
+                    }
+                }
+            }
+        }
+    });
 </script>
