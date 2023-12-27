@@ -1,4 +1,4 @@
-<div id="canvasContainer" class="preloader">
+<div class="preloader">
     <div class="div-text-hello">
         <div class="row m-0 align-items-center">
             <div class="col-12 p-0 title-hello">
@@ -12,5 +12,7 @@
             </div>
         </div>
     </div>
-    @include('components.gradient-bg')
+    <canvas class="c1" data-gradient="wrapper" data-multx="1.27" data-multy="1.15" data-hue="0.201"
+        data-brightness=".945" data-mouse="0.68" data-scale=".9" data-noise="1.64" data-time=".201" data-bw=".115"
+        data-blue=".15" data-green="0" data-red="0.99" width="1325" height="627"></canvas>
 </div>
