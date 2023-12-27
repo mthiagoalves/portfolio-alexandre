@@ -3,10 +3,8 @@
         <div class="width-banner disable-events">
             @if (!Route::is('pageHomepage'))
                 <div class="col-12 p-0 text-center position-absolute pic-ale">
-                    <img src="{{ asset('/img/homepage/banner-initial.png') }}" alt="banner"
-                        class="img-fluid m-auto d-none d-sm-block">
-                    <img src="{{ asset('/img/homepage/banner-initial-m.png') }}" alt="banner"
-                        class="img-fluid m-auto d-block d-sm-none">
+                    <img src="https://i.imgur.com/3kSWRVi.png" alt="banner" class="img-fluid m-auto d-none d-sm-block">
+                    <img src="https://i.imgur.com/2DIzKmt.png" alt="banner" class="img-fluid m-auto d-block d-sm-none">
                 </div>
                 <div class="located-in-pt d-none d-sm-block">
                     <div class="img-located-in-pt">
@@ -58,8 +56,8 @@
                 <div class="text-inside-banner d-block d-sm-none">
                     <p>
                         UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer -
-                        Product
-                        Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic
+                        Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer -
+                        Graphic
                         Designer
                         -
                         Product Designer

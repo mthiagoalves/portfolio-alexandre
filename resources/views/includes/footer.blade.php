@@ -76,8 +76,8 @@
 </style>
 
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
-    <nav class="navbar navbar-expand-lg" style="z-index: 2">
-        <div class="container px-sm-0 px-4">
+    <nav class="navbar navbar-expand-lg px-4 navbar-footer" style="z-index: 2">
+        <div class="container-fluid px-sm-5 px-4">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
                 <img src="/img/logo.png" alt="logo" class="img-fluid">
             </a>
@@ -110,14 +110,12 @@
                 <div class="row">
                     <div class="col-sm-6 col-12 my-3 my-sm-0">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="mailto:{{ $content->email }}"
-                            title="E-mail: {{ $content->email }}">
-                            <i class="fa-solid fa-envelope" style="color: #ffffff;"></i> {{ $content->email }}
+                            title="E-mail: {{ $content->email }}"> {{ $content->email }}
                         </a>
                     </div>
                     <div class="col-sm-5 col-12 my-3 my-sm-0">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href=""
-                            title="Phone number: +351 913 748 996">
-                            <i class="fa-solid fa-phone-volume"></i> {!! $content->phone !!}
+                            title="Phone number: +351 913 748 996"> {!! $content->phone !!}
                         </a>
                     </div>
                 </div>

@@ -2,10 +2,10 @@
     @include('components.pre-loader')
 @endif
 
-<nav class="navbar navbar-expand-lg px-4 pt-3 w-100 position-absolute opacity-load-nav flex-column">
+<nav class="navbar navbar-expand-lg px-4 pt-3 w-100 opacity-load-nav flex-column navbar-top fixed-top">
     <div class="container-fluid px-sm-5">
         <a class="navbar-brand" href="{{ route('pageHomepage') }}">
-            <img src="/img/logo.png" alt="logo" class="img-fluid">
+            <img src="https://i.imgur.com/dR1FnHK.png" alt="logo" class="img-fluid">
         </a>
         <button class="navbar-toggler" onclick="toggleNavbar()" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

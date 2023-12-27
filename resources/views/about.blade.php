@@ -86,7 +86,7 @@
 
 <x-master-layout>
     <x-slot name="content">
-        <div class="container p-0 my-5">
+        <div class="container p-0 margin-y-80">
             <div class="row justify-content-between m-0">
                 <div class="col-sm-2 col-12 ">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">

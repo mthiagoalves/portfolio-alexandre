@@ -42,7 +42,7 @@
 
 <x-master-layout>
     <x-slot name="content" class="page1">
-        <div class="container p-0 my-5 give-margin">
+        <div class="container p-0 margin-y-80 give-margin">
             <div class="row justify-content-between m-0">
                 <div class="col-sm-8 col-12">
                     <div class="col-11 p-2 col-sm-12 p-sm-0">
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="container-fluid p-sm-0 my-5 receive-margin">
+        <div class="container-fluid p-sm-0 margin-mb-80 receive-margin">
             @include('components.slide-projects')
         </div>
 
