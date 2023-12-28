@@ -435,6 +435,19 @@
             buttonSkills.onmouseout = function() {
                 buttonSkills.textContent = "Wanna see some projects?";
             }
+
+            window.addEventListener("scroll", function() {
+            var navbar = document.querySelector('.navbar-top');
+            var footer = document.querySelector('.navbar-footer');
+
+            if (isElementInViewport(footer)) {
+                navbar.style.opacity = 0;
+                navbar.style.pointerEvents = "none";
+            } else {
+                navbar.style.opacity = 1;
+                navbar.style.pointerEvents = "all";
+            }
+        });
         </script>
     </x-slot>
 </x-master-layout>

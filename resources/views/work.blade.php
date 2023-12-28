@@ -212,6 +212,18 @@
                 var navbarHeight = document.querySelector('.navbar').offsetHeight;
                 document.querySelector('.container-work').style.marginTop = navbarHeight * 2 + 'px';
 
+                window.addEventListener("scroll", function() {
+                    var navbar = document.querySelector('.navbar-top');
+                    var footer = document.querySelector('.navbar-footer');
+
+                    if (isElementInViewport(footer)) {
+                        navbar.style.opacity = 0;
+                        navbar.style.pointerEvents = "none";
+                    } else {
+                        navbar.style.opacity = 1;
+                        navbar.style.pointerEvents = "all";
+                    }
+                });
             });
         </script>
     </x-slot>

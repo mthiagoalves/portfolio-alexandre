@@ -77,9 +77,9 @@
 
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
     <nav class="navbar navbar-expand-lg px-4 navbar-footer" style="z-index: 2">
-        <div class="container-fluid px-sm-5 px-4">
+        <div class="container-fluid px-sm-5 px-2">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
-                <img src="/img/logo.png" alt="logo" class="img-fluid">
+                <img src="https://i.imgur.com/dR1FnHK.png" alt="logo" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,14 +88,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item my-3 mx-sm-3 d-block d-sm-none">
-                        <a aria-current="page" href="{{ route('pageHomepage') }}">Homepage</a>
+                        <a aria-current="page" href="{{ route('pageHomepage') }}">Home</a>
                     </li>
                     <li class="nav-item my-3 mx-sm-3">
                         <x-nav-link-web aria-current="page" href="{{ route('pageAbout') }}"
                             :active="request()->routeIs('pageAbout')">About</x-nav-link-web>
                     </li>
                     <li class="nav-item my-3 mx-sm-3">
-                        <x-nav-link-web href="{{ route('pageWork') }}" :active="request()->routeIs('pageWork')">Work</x-nav-link-web>
+                        <x-nav-link-web href="{{ route('pageWork') }}" :active="request()->routeIs('pageWork')">Projects</x-nav-link-web>
                     </li>
                     <li class="nav-item my-3 mx-sm-3">
                         <x-nav-link-web href="#">Contact</x-nav-link-web>
@@ -108,14 +108,19 @@
         <div class="row justify-content-between m-0">
             <div class="col-sm-8 col-12 my-sm-0 my-4 p-0" style="z-index: 2">
                 <div class="row">
-                    <div class="col-sm-6 col-12 my-3 my-sm-0">
+                    <div class="col-sm-12 col-12 my-4 my-sm-3">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="mailto:{{ $content->email }}"
                             title="E-mail: {{ $content->email }}"> {{ $content->email }}
                         </a>
                     </div>
-                    <div class="col-sm-5 col-12 my-3 my-sm-0">
+                    <div class="col-sm-12 col-12 my-4 my-sm-3">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href=""
                             title="Phone number: +351 913 748 996"> {!! $content->phone !!}
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-12 my-4 my-sm-3">
+                        <a class="text-footer-hyperlink p-2 px-4" target="_blank" href=""
+                            title="Download CV"> Curriculum Vitae
                         </a>
                     </div>
                 </div>
@@ -125,7 +130,7 @@
                     {!! $content->text_footer !!}
                 </p>
             </div>
-            <div class="text-lets-work-together col-12 p-0 col-sm-12" style="z-index: 2">
+            <div class="text-lets-work-together col-12 p-0 col-sm-12 d-none d-sm-block" style="z-index: 2">
                 <p>
                     let’s work together - let’s work together - let’s work together - let’s work together - let’s work
                     together - let’s work together - let’s work together - let’s work together - let’s work together - let’s
@@ -133,7 +138,7 @@
                 </p>
             </div>
         </div>
-        <div class="row justify-content-between m-0 mt-4 fixed-row">
+        <div class="row justify-content-between m-0 mt-4">
             <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2 disable-events" style="z-index: 2">
                 <div class="row justify-content-between align-items-end m-0">
                     <div class="col-8 p-0">

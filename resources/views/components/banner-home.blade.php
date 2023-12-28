@@ -38,29 +38,20 @@
             @endif
             <div class="text-name-main-banner">
                 <p>
-                    Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre
+                    Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade -
+                    Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre
                 </p>
             </div>
             @if (Route::is('pageHomepage'))
                 <div class="text-inside-banner">
                     <p>
-                        UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer -
-                        Product
-                        Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic
-                        Designer
-                        -
-                        Product Designer
+                        UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer
                     </p>
                 </div>
             @else
                 <div class="text-inside-banner d-block d-sm-none">
                     <p>
-                        UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer -
-                        Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer -
-                        Graphic
-                        Designer
-                        -
-                        Product Designer
+                        UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer - UI UX Designer - Graphic Designer - Product Designer
                     </p>
                 </div>
             @endif
