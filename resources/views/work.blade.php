@@ -161,69 +161,133 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12">
+                <div class="col-sm-10 col-12 d-none d-sm-block">
                     <div class="row m-0">
+                        @php $count = 0; @endphp
                         @foreach ($projects as $project)
-                            <div class="col-6 p-2 col-sm-6">
-                                <div class="slide-projects">
-                                    <img src="https://dummyimage.com/580x750/4c6951/fff" alt=""
-                                        class="img-fluid img-slide-projects">
-                                    <div class="overflow">
-                                        <div class="content p-5 d-none d-sm-block">
-                                            <h3 class="title-project-overflow">{{ $project->title }}</h3>
-                                            <p class="description-project-overflow d-sm-block d-none">
-                                                {{ $project->description }}
-                                            </p>
-                                            <p class="description-project-overflow d-sm-none d-block">
-                                                {{ strlen($project->description) > 210 ? substr($project->description, 0, 210) . '...' : $project->description }}
-                                            </p>
-                                            <div class="col-12 p-0 mt-2">
-                                                <div class="row m-0">
-                                                    @foreach ($project->tags as $tag)
-                                                        <div class="col-6 pt-2 p-0">
-                                                            <div class="col-12 p-1">
-                                                                <p class="tag-projects-overflow p-2 px-3">
-                                                                    {{ $tag->name }}
-                                                                </p>
+                            @php
+                                $count++;
+                            @endphp
+                            @if ($count < 5)
+                                <div class="col-6 p-2 col-sm-6">
+                                    <div class="slide-projects">
+                                        <img src="https://dummyimage.com/580x750/4c6951/fff" alt=""
+                                            class="img-fluid img-slide-projects">
+                                        <div class="overflow">
+                                            <div class="content p-5 d-none d-sm-block">
+                                                <h3 class="title-project-overflow">{{ $project->title }}</h3>
+                                                <p class="description-project-overflow d-sm-block d-none">
+                                                    {{ $project->description }}
+                                                </p>
+                                                <div class="col-12 p-0 mt-2">
+                                                    <div class="row m-0">
+                                                        @foreach ($project->tags as $tag)
+                                                            <div class="col-6 pt-2 p-0">
+                                                                <div class="col-12 p-1">
+                                                                    <p class="tag-projects-overflow p-2 px-3">
+                                                                        {{ $tag->name }}
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    @endforeach
+                                                        @endforeach
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <a href="#" class="btn-know-more p-2 px-3">Know More</a>
                                         </div>
-                                        <a href="#" class="btn-know-more p-2 px-3">Know More</a>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @elseif($count >= 5)
+                                @if ($count == 5)
+                                    <div id="demo-stock" class="row col-12 m-0 p-0 collapse">
+                                @endif
+                                <div class="col-6 p-2 col-sm-6">
+                                    <div class="slide-projects">
+                                        <img src="https://dummyimage.com/580x750/4c6951/fff" alt=""
+                                            class="img-fluid img-slide-projects">
+                                        <div class="overflow">
+                                            <div class="content p-5 d-none d-sm-block">
+                                                <h3 class="title-project-overflow">{{ $project->title }}</h3>
+                                                <p class="description-project-overflow">
+                                                    {{ $project->description }}
+                                                </p>
+                                                <div class="col-12 p-0 mt-2">
+                                                    <div class="row m-0">
+                                                        @foreach ($project->tags as $tag)
+                                                            <div class="col-6 pt-2 p-0">
+                                                                <div class="col-12 p-1">
+                                                                    <p class="tag-projects-overflow p-2 px-3">
+                                                                        {{ $tag->name }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="btn-know-more p-2 px-3">Know More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @if ($loop->last)
                     </div>
-                    <div class="col-12 p-2 col-sm-12 p-sm-0 text-center mt-4">
-                        <a href="" class="btn-projects p-2 px-3">
-                            Want to see more projects?
-                        </a>
-                    </div>
+                    @endif
+                    @endif
+                    @endforeach
+                </div>
+                <div class="col-12 p-2 col-sm-12 p-sm-0 text-center mt-4">
+                    <a class="btn-projects p-2 px-3" style="cursor: pointer" data-toggle="collapse"
+                        data-target="#demo-stock">
+                        Want to see more projects?
+                    </a>
                 </div>
             </div>
+        </div>
         </div>
         @include('includes.footer')
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-
                 var navbarHeight = document.querySelector('.navbar').offsetHeight;
                 document.querySelector('.container-work').style.marginTop = navbarHeight * 2 + 'px';
 
-                window.addEventListener("scroll", function() {
-                    var navbar = document.querySelector('.navbar-top');
-                    var footer = document.querySelector('.navbar-footer');
+            });
+            window.addEventListener("scroll", function() {
+                var navbar = document.querySelector('.navbar-top');
+                var footer = document.querySelector('.navbar-footer');
 
-                    if (isElementInViewport(footer)) {
-                        navbar.style.opacity = 0;
-                        navbar.style.pointerEvents = "none";
+                if (isElementInViewport(footer)) {
+                    navbar.style.opacity = 0;
+                    navbar.style.pointerEvents = "none";
+                } else {
+                    navbar.style.opacity = 1;
+                    navbar.style.pointerEvents = "all";
+                }
+            });
+
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            document.addEventListener('click', function(event) {
+                var target = event.target;
+                var divCollapse = document.getElementById('demo-stock');
+                if (target && target.getAttribute('data-toggle') === 'collapse' && target.classList.contains(
+                        'btn-projects')) {
+                    if (target.classList.contains('clicked')) {
+                        target.classList.remove('clicked');
+                        divCollapse.classList.remove('show');
+                        target.innerHTML = 'Want to see more projects?';
                     } else {
-                        navbar.style.opacity = 1;
-                        navbar.style.pointerEvents = "all";
+                        target.classList.add('clicked');
+                        divCollapse.classList.add('show');
+                        target.innerHTML = 'Want to see less projects!';
                     }
-                });
+                }
             });
         </script>
     </x-slot>

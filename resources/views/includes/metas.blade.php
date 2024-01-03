@@ -472,11 +472,11 @@
         }
     }
 
-    @media (min-width: 1490px) {
+    /* @media (min-width: 1490px) {
         .text-lets-work-together {
             margin-top: 8rem;
         }
-    }
+    } */
 
     @media (min-width: 1100px) {
         .img-located-in-pt img:hover {

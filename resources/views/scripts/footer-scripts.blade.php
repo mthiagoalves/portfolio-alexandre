@@ -1,5 +1,4 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-{{-- <script src="/js/gradient.js"></script> --}}
 <script>
     function toggleNavbar() {
         var navbar = document.querySelector('.opacity-load-nav');
