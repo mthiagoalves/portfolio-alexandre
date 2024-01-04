@@ -76,7 +76,7 @@
 </style>
 
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
-    <nav class="navbar navbar-expand-lg px-4 navbar-footer" style="z-index: 2">
+    {{-- <nav class="navbar navbar-expand-lg px-4 navbar-footer" style="z-index: 2">
         <div class="container-fluid px-sm-5 px-2">
             <a class="navbar-brand" href="{{ route('pageHomepage') }}">
                 <img src="https://i.imgur.com/dR1FnHK.png" alt="logo" class="img-fluid">
@@ -103,8 +103,8 @@
                 </ul>
             </div>
         </div>
-    </nav>
-    <div class="container mt-sm-5 p-sm-0 px-3 footer-content">
+    </nav> --}}
+    <div class="container p-sm-0 px-3 footer-content">
         <div class="row justify-content-between m-0">
             <div class="col-sm-8 col-12 my-sm-0 my-4 p-0" style="z-index: 2">
                 <div class="row">
@@ -115,7 +115,7 @@
                     </div>
                     <div class="col-sm-12 col-12 my-4 my-sm-3">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href=""
-                            title="Phone number: +351 913 748 996"> {!! $content->phone !!}
+                            title="Phone number: +351 913 748 996" style="font-weight: 300"> {!! $content->phone !!}
                         </a>
                     </div>
                     <div class="col-sm-12 col-12 my-4 my-sm-3">
@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0 disable-events" style="z-index: 2">
+            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0 disable-events " style="z-index: 2">
                 <p class="text-footer">
                     {!! $content->text_footer !!}
                 </p>
@@ -138,44 +138,46 @@
                 </p>
             </div>
         </div>
-        <div class="row justify-content-between m-0 mt-4">
-            <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2 disable-events" style="z-index: 2">
-                <div class="row justify-content-between align-items-end m-0">
-                    <div class="col-8 p-0">
-                        <p class="sample-text">
-                            Local Time
-                        </p>
-                        <p class="text-hours">
-                            {!! $localTime !!}
-                        </p>
-                    </div>
-                    <div class="col-4 mt-sm-3 text-end d-block d-sm-none">
-                        <p>©2023</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-12 p-0 my-sm-0 my-4 order-sm-2 order-1" style="z-index: 2">
-                <p class="sample-text">
-                    Let's connect
-                </p>
-                <div class="col-12">
-                    <div class="row align-items-center m-0">
-                        @foreach ($socials as $social)
-                            <div class="col-4 p-0 mr-2">
-                                <a class="text-socials" href="{{ $social->link }}" target="_blank">
-                                    <p>
-                                        {{ $social->social_name }}
-                                    </p>
-                                </a>
-                            </div>
-                        @endforeach
-                        <div class="col-sm-4 col-12 text-end d-none d-sm-block disable-events">
+        <div class="container p-0 fixed-footer-bottom">
+            <div class="row justify-content-between m-0 mt-4">
+                <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2 disable-events" style="z-index: 2">
+                    <div class="row justify-content-between align-items-end m-0">
+                        <div class="col-8 p-0">
+                            <p class="sample-text">
+                                Local Time
+                            </p>
+                            <p class="text-hours">
+                                {!! $localTime !!}
+                            </p>
+                        </div>
+                        <div class="col-4 mt-sm-3 text-end d-block d-sm-none">
                             <p>©2023</p>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-sm-3 col-12 p-0 my-sm-0 my-4 order-sm-2 order-1" style="z-index: 2">
+                    <p class="sample-text">
+                        Let's connect
+                    </p>
+                    <div class="col-12">
+                        <div class="row align-items-center m-0">
+                            @foreach ($socials as $social)
+                                <div class="col-4 p-0 mr-2">
+                                    <a class="text-socials" href="{{ $social->link }}" target="_blank">
+                                        <p>
+                                            {{ $social->social_name }}
+                                        </p>
+                                    </a>
+                                </div>
+                            @endforeach
+                            <div class="col-4 p-0 mr-2 d-none d-sm-block disable-events">
+                                <p>©2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
         </div>
     </div>
     <div class="gradient-transition-bottom"></div>

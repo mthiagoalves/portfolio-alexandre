@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     function toggleNavbar() {
         var navbar = document.querySelector('.opacity-load-nav');
@@ -21,30 +21,44 @@
     }
 
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        freeMode: true,
-        spaceBetween: 15,
-        initialSlide: 0,
-        breakpoints: {
-            1500: {
-                slidesPerView: 4
-            },
-            1200: {
-                slidesPerView: 3
-            },
-            850: {
-                slidesPerView: 2,
-            },
-            450: {
-                freeMode: false,
-                slidesPerView: 2,
-            },
-            250: {
-                freeMode: false,
-                slidesPerView: 1
-            }
+    slidesPerView: 'auto',
+    spaceBetween: 15,
+    freeMode: true,
+    autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+    speed: 3000,
+    grabCursor: true,
+    breakpoints: {
+        1500: {
+            slidesPerView: 4
+        },
+        1200: {
+            slidesPerView: 3
+        },
+        850: {
+            slidesPerView: 2,
+        },
+        450: {
+            slidesPerView: 2,
+        },
+        250: {
+            slidesPerView: 1,
         }
+    },
     });
+
+    var mySwiper = document.querySelector('.swiper-container').swiper;
+
+    document.querySelector(".swiper-container").addEventListener("mouseenter", function () {
+        mySwiper.autoplay.stop();
+    });
+
+    document.querySelector(".swiper-container").addEventListener("mouseleave", function () {
+        mySwiper.autoplay.start();
+    });
+
 
     document.addEventListener("DOMContentLoaded", function() {
         var text = document.querySelector(".progress-text");
@@ -52,11 +66,13 @@
         var loader = document.querySelector('.preloader');
         const contentNav = document.querySelector(".opacity-load-nav");
         const contentBanner = document.querySelector(".opacity-load-banner");
+        const contentLogo = document.querySelector(".navbar-brand");
 
-        if (performance.navigation.type === 1) {
+        if (performance.navigation.type === 1 && window.location.pathname === '/') {
             loader.style.height = '100vh';
             loader.style.opacity = 1;
             contentNav.style.opacity = 0;
+            contentLogo.style.opacity = 1;
             contentBanner.style.opacity = 0;
             var id = setInterval(frame, 70);
 
@@ -70,6 +86,7 @@
                     setTimeout(function() {
                         loader.style.display = 'none';
                         document.body.style.overflowY = 'visible';
+                        executeAfterLoader();
                     }, 2500);
                 } else {
                     width++;
@@ -98,39 +115,87 @@
                     }
                 }
             }
+        } else {
+            executeAfterLoader();
         }
 
-        window.addEventListener("scroll", function() {
+        function executeAfterLoader() {
             var navbar = document.querySelector('.navbar-top');
+            var scrollDown = document.querySelector('.text-scroll-banner');
             var footer = document.querySelector('.navbar-footer');
 
-            if (isElementInViewport(footer)) {
-                navbar.style.opacity = 0;
-                navbar.style.pointerEvents = "none";
-            } else {
-                navbar.style.opacity = 1;
-                navbar.style.pointerEvents = "all";
-            }
-        });
+            var lastScrollTop = 0;
 
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
+            window.addEventListener('scroll', function() {
+                var scrollTop = window.scrollY;
+
+                if (scrollTop > lastScrollTop && window.innerHeight + window.scrollY < document.body
+                    .offsetHeight) {
+                    navbar.style.opacity = '0';
+                    navbar.style.pointerEvents = 'none';
+                    if(window.location.pathname != '/work') {
+                        scrollDown.style.opacity = '0';
+                    }
+
+                } else if (scrollTop < lastScrollTop) {
+                    navbar.style.opacity = '0';
+                    navbar.style.pointerEvents = 'none';
+                    if(window.location.pathname != '/work') {
+                        scrollDown.style.opacity = '0';
+                    }
+                }
+
+                if (scrollTop === 0 || (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                    navbar.style.opacity = '1';
+                    navbar.style.pointerEvents = 'all';
+                    if(window.location.pathname != '/work') {
+                        scrollDown.style.opacity = '1';
+                    }
+                }
+
+
+                lastScrollTop = scrollTop;
+            });
+
         }
 
-        if (window.innerWidth > 1450) {
-            var navbarHeight = document.querySelector('.navbar').offsetHeight;
-            var footerContent = document.querySelector('.footer-content').offsetHeight;
-            document.querySelector('.container-footer').style.height = (navbarHeight + footerContent + 80) +
+            // var divToTouch = document.querySelector('.text-lets-work-together');
+            // var footer = document.querySelector('.navbar-footer');
+
+            // function handleScroll() {
+            //     if (isElementInViewport(divToTouch)) {
+            //         footer.style.opacity = 1;
+            //         footer.style.pointerEvents = "all";
+            //     } else {
+            //         footer.style.opacity = 0;
+            //         footer.style.pointerEvents = "none";
+            //     }
+            // }
+
+            // window.addEventListener("scroll", handleScroll);
+
+            // function isElementInViewport(el) {
+            //     var rect = el.getBoundingClientRect();
+            //     return (
+            //         rect.top >= 0 &&
+            //         rect.left >= 0 &&
+            //         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            //         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            //     );
+            // }
+
+
+        var navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+        if (window.innerWidth < 1450) {
+            document.querySelector('.footer-content').style.marginTop = (navbarHeight + 15) +
+                'px';
+            } else {
+            document.querySelector('.footer-content').style.marginTop = (navbarHeight + 51) +
                 'px';
         }
 
-        if (window.innerWidth > 756) {
+        if (window.innerWidth > 756 && window.location.pathname === '/') {
             const containerDiv = document.querySelector('.give-margin');
             const sliderDiv = document.querySelector('.receive-margin');
 
@@ -140,8 +205,6 @@
 
             sliderDiv.style.marginLeft = `${newMarginLeftValue}px`;
         }
-
-
     });
 </script>
 
@@ -301,14 +364,15 @@
             fn = T * i + S * a + D * h - (E * i + C * a + F * h),
             j = 1 / (e * un + o * cn + c * hn + g * fn);
         return t[0] = j * un, t[1] = j * cn, t[2] = j * hn, t[3] = j * fn, t[4] = j * (v * o + A * c + T * g - (y * o +
-                x * c + E * g)), t[5] = j * (y * e + b * c + S * g - (v * e + w * c + C * g)), t[6] = j * (x * e + w *
-                o + D * g - (A * e + b * o + F * g)), t[7] = j * (E * e + C * o + F * c - (T * e + S * o + D * c)), t[
-            8] = j * (O * u + R * d + I * p - (k * u + z * d + ht * p)), t[9] = j * (k * s + ft * d + Gt * p - (O * s +
-                bt * d + _t * p)), t[10] = j * (z * s + bt * u + et * p - (R * s + ft * u + dt * p)), t[11] = j * (ht *
-                s + _t * u + dt * d - (I * s + Gt * u + et * d)), t[12] = j * (z * f + ht * m + k * l - (I * m + O * l +
-                R * f)), t[13] = j * (_t * m + O * r + bt * f - (ft * f + Gt * m + k * r)), t[14] = j * (ft * l + dt *
-                m + R * r - (et * m + z * r + bt * l)), t[15] = j * (et * f + I * r + Gt * l - (_t * l + dt * f + ht *
-                r)), t
+            x * c + E * g)), t[5] = j * (y * e + b * c + S * g - (v * e + w * c + C * g)), t[6] = j * (x * e + w *
+            o + D * g - (A * e + b * o + F * g)), t[7] = j * (E * e + C * o + F * c - (T * e + S * o + D * c)), t[
+            8] = j * (O * u + R * d + I * p - (k * u + z * d + ht * p)), t[9] = j * (k * s + ft * d + Gt * p - (O *
+            s +
+            bt * d + _t * p)), t[10] = j * (z * s + bt * u + et * p - (R * s + ft * u + dt * p)), t[11] = j * (ht *
+            s + _t * u + dt * d - (I * s + Gt * u + et * d)), t[12] = j * (z * f + ht * m + k * l - (I * m + O * l +
+            R * f)), t[13] = j * (_t * m + O * r + bt * f - (ft * f + Gt * m + k * r)), t[14] = j * (ft * l + dt *
+            m + R * r - (et * m + z * r + bt * l)), t[15] = j * (et * f + I * r + Gt * l - (_t * l + dt * f + ht *
+            r)), t
     }
 
     function Ds(n, t, e) {
@@ -385,7 +449,8 @@
 
     function Ls(n, t, e, i, r, s, o) {
         return o = o || new $(16), o[0] = 2 / (t - n), o[1] = 0, o[2] = 0, o[3] = 0, o[4] = 0, o[5] = 2 / (i - e), o[
-            6] = 0, o[7] = 0, o[8] = 0, o[9] = 0, o[10] = 2 / (r - s), o[11] = 0, o[12] = (t + n) / (n - t), o[13] = (
+                6] = 0, o[7] = 0, o[8] = 0, o[9] = 0, o[10] = 2 / (r - s), o[11] = 0, o[12] = (t + n) / (n - t), o[13] =
+            (
                 i + e) / (e - i), o[14] = (s + r) / (r - s), o[15] = 1, o
     }
 
@@ -403,7 +468,8 @@
     function Us(n, t, e, i) {
         return i = i || new $(16), Ot = Ot || Bt(), Ht = Ht || Bt(), Pt = Pt || Bt(), ei(Cs(n, t, Pt), Pt), ei(_n(e, Pt,
                 Ot), Ot), ei(_n(Pt, Ot, Ht), Ht), i[0] = Ot[0], i[1] = Ot[1], i[2] = Ot[2], i[3] = 0, i[4] = Ht[0], i[
-            5] = Ht[1], i[6] = Ht[2], i[7] = 0, i[8] = Pt[0], i[9] = Pt[1], i[10] = Pt[2], i[11] = 0, i[12] = n[0], i[
+                5] = Ht[1], i[6] = Ht[2], i[7] = 0, i[8] = Pt[0], i[9] = Pt[1], i[10] = Pt[2], i[11] = 0, i[12] = n[0],
+            i[
                 13] = n[1], i[14] = n[2], i[15] = 1, i
     }
 
@@ -583,7 +649,8 @@
             r = t[1],
             s = t[2];
         return e[0] = i * n[0 * 4 + 0], e[1] = i * n[0 * 4 + 1], e[2] = i * n[0 * 4 + 2], e[3] = i * n[0 * 4 + 3], e[
-            4] = r * n[1 * 4 + 0], e[5] = r * n[1 * 4 + 1], e[6] = r * n[1 * 4 + 2], e[7] = r * n[1 * 4 + 3], e[8] = s *
+                4] = r * n[1 * 4 + 0], e[5] = r * n[1 * 4 + 1], e[6] = r * n[1 * 4 + 2], e[7] = r * n[1 * 4 + 3], e[8] =
+            s *
             n[2 * 4 + 0], e[9] = s * n[2 * 4 + 1], e[10] = s * n[2 * 4 + 2], e[11] = s * n[2 * 4 + 3], n !== e && (e[
                 12] = n[12], e[13] = n[13], e[14] = n[14], e[15] = n[15]), e
     }
@@ -777,7 +844,7 @@
         let e;
         if (So.test(n) ? e = 2 : Co.test(n) ? e = 4 : e = 3, t % e > 0) throw new Error(
             `Can not guess numComponents for attribute '${n}'. Tried ${e} but ${t} values is not evenly divisible by ${e}. You should specify it.`
-            );
+        );
         return e
     }
 
@@ -2012,7 +2079,7 @@ ${o.filter(a=>a).join(`
         }
         _callOnChange() {
             this.parent._callOnChange(this), this._onChange !== void 0 && this._onChange.call(this, this
-            .getValue()), this._changed = !0
+                .getValue()), this._changed = !0
         }
         onFinishChange(t) {
             return this._onFinishChange = t, this
@@ -2056,7 +2123,7 @@ ${o.filter(a=>a).join(`
         listen(t = !0) {
             return this._listening = t, this._listenCallbackID !== void 0 && (cancelAnimationFrame(this
                     ._listenCallbackID), this._listenCallbackID = void 0), this._listening && this
-            ._listenCallback(), this
+                ._listenCallback(), this
         }
         _listenCallback() {
             this._listenCallbackID = requestAnimationFrame(this._listenCallback);
@@ -2201,9 +2268,9 @@ ${o.filter(a=>a).join(`
         constructor(t, e, i) {
             super(t, e, i, "function"), this.$button = document.createElement("button"), this.$button.appendChild(
                 this.$name), this.$widget.appendChild(this.$button), this.$button.addEventListener("click",
-            r => {
-                r.preventDefault(), this.getValue().call(this.object), this._callOnChange()
-            }), this.$button.addEventListener("touchstart", () => {}, {
+                r => {
+                    r.preventDefault(), this.getValue().call(this.object), this._callOnChange()
+                }), this.$button.addEventListener("touchstart", () => {}, {
                 passive: !0
             }), this.$disable = this.$button
         }
@@ -2294,7 +2361,7 @@ ${o.filter(a=>a).join(`
         }
         _initSlider() {
             this._hasSlider = !0, this.$slider = document.createElement("div"), this.$slider.classList.add(
-                "slider"), this.$fill = document.createElement("div"), this.$fill.classList.add("fill"), this
+                    "slider"), this.$fill = document.createElement("div"), this.$fill.classList.add("fill"), this
                 .$slider.appendChild(this.$fill), this.$widget.insertBefore(this.$slider, this.$input), this
                 .domElement.classList.add("hasSlider");
             const t = (p, y, v, A, x) => (p - y) / (v - y) * (x - A) + A,
@@ -2890,7 +2957,8 @@ ${o.filter(a=>a).join(`
         } = {}) {
             if (this.parent = t, this.root = t ? t.root : this, this.children = [], this.controllers = [], this
                 .folders = [], this._closed = !1, this._hidden = !1, this.domElement = document.createElement(
-                "div"), this.domElement.classList.add("lil-gui"), this.$title = document.createElement("div"), this
+                    "div"), this.domElement.classList.add("lil-gui"), this.$title = document.createElement("div"),
+                this
                 .$title.classList.add("title"), this.$title.setAttribute("role", "button"), this.$title
                 .setAttribute("aria-expanded", !0), this.$title.setAttribute("tabindex", 0), this.$title
                 .addEventListener("click", () => this.openAnimated(this._closed)), this.$title.addEventListener(
@@ -2906,7 +2974,7 @@ ${o.filter(a=>a).join(`
                 return
             }
             this.domElement.classList.add("root"), !vn && a && (Al(xl), vn = !0), i ? i.appendChild(this
-                .domElement) : e && (this.domElement.classList.add("autoPlace"), document.body.appendChild(this
+                    .domElement) : e && (this.domElement.classList.add("autoPlace"), document.body.appendChild(this
                     .domElement)), r && this.domElement.style.setProperty("--width", r + "px"), this._closeFolders =
                 o, this.domElement.addEventListener("keydown", u => u.stopPropagation()), this.domElement
                 .addEventListener("keyup", u => u.stopPropagation())
@@ -3523,7 +3591,7 @@ void main() {
         Gr = function(t, e, i, r, s) {
             if (tn(t, e, s), !t._initted) return 1;
             if (!i && t._pt && !Q && (t._dur && t.vars.lazy !== !1 || !t._dur && t.vars.lazy) && Ir !== lt.frame)
-            return Lt.push(t), t._lazy = [s, r], 1
+                return Lt.push(t), t._lazy = [s, r], 1
         },
         Ll = function n(t) {
             var e = t.parent;
@@ -4363,7 +4431,8 @@ void main() {
                             if (g = d._prev, (d._act || S <= d._end) && d._ts && y !== d) {
                                 if (d.parent !== this) return this.render(r, s, o);
                                 if (d.render(d._ts > 0 ? (S - d._start) * d._ts : (d._dirty ? d
-                                    .totalDuration() : d._tDur) + (S - d._start) * d._ts, s, o || Q && (d
+                                        .totalDuration() : d._tDur) + (S - d._start) * d._ts, s, o || Q && (
+                                        d
                                         ._initted || d._startAt)), f !== this._time || !this._ts && !p) {
                                     y = 0, g && (c += this._zTime = S ? -L : L);
                                     break
@@ -4375,7 +4444,8 @@ void main() {
                 if (y && !s && (this.pause(), y.render(f >= a ? 0 : -L)._zTime = f >= a ? 1 : -1, this._ts))
                     return this._start = A, Je(this), this.render(r, s, o);
                 this._onUpdate && !s && vt(this, "onUpdate", !0), (c === l && this._tTime >= this
-                    .totalDuration() || !c && a) && (A === this._start || Math.abs(v) !== Math.abs(this._ts)) &&
+                        .totalDuration() || !c && a) && (A === this._start || Math.abs(v) !== Math.abs(this
+                        ._ts)) &&
                     (this._lock || ((r || !u) && (c === l && this._ts > 0 || !c && this._ts < 0) && Ut(this, 1),
                         !s && !(r < 0 && !a) && (c || a || !l) && (vt(this, c === l && r >= 0 ?
                             "onComplete" : "onReverseComplete", !0), this._prom && !(c < l && this
@@ -4589,7 +4659,7 @@ void main() {
                 ._from = !E && !!r.runBackwards, !E || g && !r.stagger) {
                 if (O = y[0] ? Zt(y[0]).harness : 0, I = O && r[O.prop], T = $e(r, Ki), p && (p._zTime < 0 && p
                         .progress(1), e < 0 && f && a && !_ ? p.render(-1, !0) : p.revert(f && m ? De : Ml), p._lazy = 0
-                        ), o) {
+                    ), o) {
                     if (Ut(t._startAt = X.set(y, xt({
                             data: "isStart",
                             overwrite: !1,
@@ -5485,8 +5555,10 @@ void main() {
             return r === o || !s || Dn[r] || Dn[o] ? s : (o !== "px" && !f && (s = n(t, e, i, "px")), p = t.getCTM &&
                 As(t), (d || o === "%") && (Dt[e] || ~e.indexOf("adius")) ? (g = p ? t.getBBox()[l ? "width" :
                     "height"] : t[c], Y(d ? s / g * h : s / 100 * g)) : (a[l ? "width" : "height"] = h + (f ? o :
-                    r), _ = ~e.indexOf("adius") || r === "em" && t.appendChild && !u ? t : t.parentNode, p && (_ = (
-                        t.ownerSVGElement || {}).parentNode), (!_ || _ === zt || !_.appendChild) && (_ = zt.body),
+                        r), _ = ~e.indexOf("adius") || r === "em" && t.appendChild && !u ? t : t.parentNode, p && (
+                        _ = (
+                            t.ownerSVGElement || {}).parentNode), (!_ || _ === zt || !_.appendChild) && (_ = zt
+                        .body),
                     m = _._gsap, m && d && m.width && l && m.time === lt.time && !m.uncache ? Y(s / m.width * h) : (
                         (d || o === "%") && !Mu[St(_, "display")] && (a.position = St(t, "position")), _ === t && (a
                             .position = "static"), _.appendChild(jt), g = jt[c], _.removeChild(jt), a.position =
@@ -5515,7 +5587,7 @@ void main() {
                 c = [i, r], is(c), i = c[0], r = c[1], f = i.match(re) || [], x = r.match(re) || [], x.length) {
                 for (; h = re.exec(r);) m = h[0], y = r.substring(l, h.index), g ? g = (g + 1) % 5 : (y.substr(-5) ===
                     "rgba(" || y.substr(-5) === "hsla(") && (g = 1), m !== (_ = f[u++] || "") && (d = parseFloat(
-                    _) || 0, A = _.substr((d + "").length), m.charAt(1) === "=" && (m = oe(d, m) + A), p =
+                        _) || 0, A = _.substr((d + "").length), m.charAt(1) === "=" && (m = oe(d, m) + A), p =
                     parseFloat(m), v = m.substr((p + "").length), l = re.lastIndex - v.length, v || (v = v || ut
                         .units[e] || A, l === r.length && (r += v, a.e += v)), A !== v && (d = Nt(t, e, _, v) || 0),
                     a._pt = {
@@ -5633,9 +5705,10 @@ void main() {
                     "data-svg-origin"), ki(t, R || u, !!R || i.originIsAbsolute, i.smooth !== !1, T)), x = i.xOrigin ||
                 0, E = i.yOrigin || 0, T !== Pe && (C = T[0], F = T[1], D = T[2], O = T[3], c = k = T[4], h = z = T[5],
                     T.length === 6 ? (d = Math.sqrt(C * C + F * F), g = Math.sqrt(O * O + D * D), _ = C || F ? ne(F,
-                        C) * qt : 0, y = D || O ? ne(D, O) * qt + _ : 0, y && (g *= Math.abs(Math.cos(y * le))), i
+                            C) * qt : 0, y = D || O ? ne(D, O) * qt + _ : 0, y && (g *= Math.abs(Math.cos(y * le))), i
                         .svg && (c -= x - (x * C + E * D), h -= E - (x * F + E * O))) : (dt = T[6], Gt = T[7], ft = T[
-                        8], bt = T[9], _t = T[10], et = T[11], c = T[12], h = T[13], f = T[14], w = ne(dt, _t), m = w *
+                            8], bt = T[9], _t = T[10], et = T[11], c = T[12], h = T[13], f = T[14], w = ne(dt, _t), m =
+                        w *
                         qt, w && (b = Math.cos(-w), S = Math.sin(-w), R = k * b + ft * S, I = z * b + bt * S, ht = dt *
                             b + _t * S, ft = k * -S + ft * b, bt = z * -S + bt * b, _t = dt * -S + _t * b, et = Gt * -
                             S + et * b, k = R, z = I, dt = ht), w = ne(-D, _t), p = w * qt, w && (b = Math.cos(-w), S =
@@ -6000,11 +6073,9 @@ void main() {
         computeParams() {
             const t = document.querySelector('[data-gradient="wrapper"]'),
                 e = [parseFloat(t.dataset.red) || 0, parseFloat(t.dataset.green) || .33, parseFloat(t.dataset
-                    .blue) || .66
-                ],
+                    .blue) || .66],
                 i = [parseFloat(t.dataset.red2) || 0, parseFloat(t.dataset.green2) || 0, parseFloat(t.dataset
-                    .blue2) || 0
-                ];
+                    .blue2) || 0];
             this.params = {
                 test: t.hasAttribute("data-test"),
                 multx: parseFloat(t.dataset.multx) || .2,

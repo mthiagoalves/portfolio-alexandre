@@ -3,17 +3,6 @@
         overflow: hidden;
     }
 
-    /* .swiper-slide-prev .slide-projects .overflow,
-    .swiper-slide-next .slide-projects .overflow {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        background-color: #2024238a;
-        border-radius: 25px;
-        transition: ease-in-out 1s;
-    } */
-
     .slide-projects {
         position: relative;
     }
@@ -49,24 +38,26 @@
         color: #ffffff;
         font-size: 1rem;
         letter-spacing: .5px;
-        text-align: justify;
-        text-align-last: start;
+        text-align: start;
     }
 
     .btn-know-more {
+        max-height: 42px;
         color: #ffffff;
         text-decoration: none;
         font-size: 1.25rem;
-        border: 1px solid #ffffff;
+        border: 0.063rem solid #ffffff;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
         position: absolute;
         bottom: 8%;
         right: 12%;
+        display: flex;
+        align-items: center;
     }
 
     .btn-know-more:hover {
-        border: 1px solid #ffffff;
+        border: 0.063rem solid #ffffff;
         border-radius: 1.563rem;
         background-color: #ffffff20;
     }
@@ -101,19 +92,10 @@
                             <p class="description-project-overflow d-sm-none d-block">
                                 {{ strlen($project->description) > 210 ? substr($project->description, 0, 210) . '...' : $project->description }}
                             </p>
-                            <div class="col-12 p-0 mt-2">
-                                <div class="row m-0">
-                                    @foreach ($project->tags as $tag)
-                                        <div class="col-6 pt-2 p-0">
-                                            <div class="col-12 p-1">
-                                                <p class="tag-projects-overflow p-2 px-3">{{ $tag->name }}</p>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
                         </div>
-                        <a href="#" class="btn-know-more p-2 px-3">Know More</a>
+                        <div class="col-sm-12 col-12 my-4 my-sm-3">
+                            <a href="#" class="btn-know-more p-2 px-4">Know More</a>
+                        </div>
                     </div>
                 </div>
             </div>

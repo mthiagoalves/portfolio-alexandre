@@ -15,7 +15,7 @@
 <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%221.1em%22 font-size=%2270%22>AP.</text></svg>">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -266,7 +266,7 @@
 
     .container-footer {
         width: 100vw;
-        height: 100%;
+        height: 100vh;
         position: relative;
         overflow: hidden;
         background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
@@ -287,7 +287,7 @@
 
     .progress-text {
         color: #ffffff;
-        font-size: 5.5rem;
+        font-size: 3.5rem;
         margin: 0;
         text-align: right;
         opacity: 1;
@@ -307,18 +307,19 @@
         color: #ffffff;
         font-size: 12rem;
         margin: 0;
-        line-height: 1;
+        line-height: .8;
     }
 
     .text-hello {
         color: #fff;
-        font-size: 3rem;
-        margin: 10px 0.938rem;
+        font-size: 3.5rem;
+        margin: 0.625rem 0.938rem;
         line-height: 0;
     }
 
     .opacity-load-nav,
-    .opacity-load-banner {
+    .opacity-load-banner,
+    .navbar-top {
         opacity: 1;
         transition: opacity 0.8s ease-in-out;
     }
@@ -373,9 +374,6 @@
         height: 5.938rem;
         border-top-right-radius: 3.125rem;
         border-bottom-right-radius: 3.125rem;
-        -webkit-box-shadow: 0.25rem 0.25rem 0.938rem 0rem #000000bf;
-        -moz-box-shadow: 0.25rem 0.25rem 0.938rem 0rem #000000bf;
-        box-shadow: 0.25rem 0.25rem 0.938rem 0rem #000000bf;
     }
 
     .text-right-banner {
@@ -385,7 +383,7 @@
         right: 3%;
         color: #ffffff;
         font-size: 2rem;
-        line-height: 1.875rem;
+        line-height: 2.2rem;
     }
 
     .img-located-in-pt {
@@ -407,7 +405,7 @@
     .text-located-in-pt {
         position: absolute;
         top: 1.875rem;
-        right: 5rem;
+        left: 4.5rem;
         color: #ffffff;
         line-height: 1rem;
         text-align: start;
@@ -417,7 +415,7 @@
 
     .text-name-main-banner {
         position: absolute;
-        bottom: 10%;
+        bottom: 12%;
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
@@ -428,14 +426,13 @@
         color: #ffffff;
         text-align: center;
         font-size: 10rem;
-        line-height: 15.625rem;
         transition: all 0.5s;
         animation: sliderTextLeft 45s linear infinite;
     }
 
     .text-inside-banner {
         position: absolute;
-        bottom: -10%;
+        bottom: 5%;
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
@@ -445,15 +442,48 @@
     .text-inside-banner p {
         color: #ffffff;
         text-align: center;
-        font-size: 5rem;
-        line-height: 15.625rem;
+        font-size: 3.5rem;
         transition: all 0.5s;
         animation: sliderTextRight 45s linear infinite;
+    }
+
+    .text-scroll-banner {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        z-index: 3;
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .text-scroll-banner p {
+        color: #ffffff;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    .navbar-footer {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
     }
 
     .text-lets-work-together,
     .disable-events {
         pointer-events: none;
+    }
+
+    .fixed-footer-bottom {
+        position: absolute;
+        bottom: 0%;
+    }
+
+    .text-lets-work-together {
+        position: absolute;
+        bottom: 12%;
+        width: 100%;
     }
 
     .text-lets-work-together p {

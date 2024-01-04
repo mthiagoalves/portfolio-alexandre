@@ -32,7 +32,8 @@
                 @if (!Route::is('pageHomepage'))
                     <div class="text-right-banner d-sm-block d-none">
                         UI/UX Designer <br>
-                        Graphic Designer
+                        Graphic Designer <br>
+                        Product Designer
                     </div>
                 @endif
             @endif
@@ -55,6 +56,11 @@
                     </p>
                 </div>
             @endif
+            <div class="text-scroll-banner">
+                <p>
+                    Scroll Down
+                </p>
+            </div>
         </div>
         <div class="gradient-transition-top"></div>
         <canvas class="c2" data-gradient="wrapper" data-multx="1.27" data-multy="1.15" data-hue="0.201"

@@ -251,28 +251,7 @@
                 document.querySelector('.container-work').style.marginTop = navbarHeight * 2 + 'px';
 
             });
-            window.addEventListener("scroll", function() {
-                var navbar = document.querySelector('.navbar-top');
-                var footer = document.querySelector('.navbar-footer');
 
-                if (isElementInViewport(footer)) {
-                    navbar.style.opacity = 0;
-                    navbar.style.pointerEvents = "none";
-                } else {
-                    navbar.style.opacity = 1;
-                    navbar.style.pointerEvents = "all";
-                }
-            });
-
-            function isElementInViewport(el) {
-                var rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
             document.addEventListener('click', function(event) {
                 var target = event.target;
                 var divCollapse = document.getElementById('demo-stock');

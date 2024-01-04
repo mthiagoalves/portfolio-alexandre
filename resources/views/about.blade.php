@@ -417,37 +417,26 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
-            const buttonLkd = document.querySelector('.btn-lkd');
 
-            buttonLkd.onmouseover = function() {
-                buttonLkd.textContent = "Let's see my Linkedin 😎";
-            }
+                const buttonLkd = document.querySelector('.btn-lkd');
 
-            buttonLkd.onmouseout = function() {
-                buttonLkd.textContent = "Wanna ses my Linkedin?";
-            }
-            const buttonSkills = document.querySelector('.btn-skills');
+                buttonLkd.onmouseover = function() {
+                    buttonLkd.textContent = "Let's see my Linkedin 😎";
+                }
 
-            buttonSkills.onmouseover = function() {
-                buttonSkills.textContent = "Let's see some projects 🎨";
-            }
+                buttonLkd.onmouseout = function() {
+                    buttonLkd.textContent = "Wanna ses my Linkedin?";
+                }
+                const buttonSkills = document.querySelector('.btn-skills');
 
-            buttonSkills.onmouseout = function() {
-                buttonSkills.textContent = "Wanna see some projects?";
-            }
+                buttonSkills.onmouseover = function() {
+                    buttonSkills.textContent = "Let's see some projects 🎨";
+                }
 
-            window.addEventListener("scroll", function() {
-            var navbar = document.querySelector('.navbar-top');
-            var footer = document.querySelector('.navbar-footer');
+                buttonSkills.onmouseout = function() {
+                    buttonSkills.textContent = "Wanna see some projects?";
+                }
 
-            if (isElementInViewport(footer)) {
-                navbar.style.opacity = 0;
-                navbar.style.pointerEvents = "none";
-            } else {
-                navbar.style.opacity = 1;
-                navbar.style.pointerEvents = "all";
-            }
-        });
         </script>
     </x-slot>
 </x-master-layout>
