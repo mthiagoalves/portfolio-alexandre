@@ -76,34 +76,6 @@
 </style>
 
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
-    {{-- <nav class="navbar navbar-expand-lg px-4 navbar-footer" style="z-index: 2">
-        <div class="container-fluid px-sm-5 px-2">
-            <a class="navbar-brand" href="{{ route('pageHomepage') }}">
-                <img src="https://i.imgur.com/dR1FnHK.png" alt="logo" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav text-center">
-                    <li class="nav-item my-3 mx-sm-3 d-block d-sm-none">
-                        <a aria-current="page" href="{{ route('pageHomepage') }}">Home</a>
-                    </li>
-                    <li class="nav-item my-3 mx-sm-3">
-                        <x-nav-link-web aria-current="page" href="{{ route('pageAbout') }}"
-                            :active="request()->routeIs('pageAbout')">About</x-nav-link-web>
-                    </li>
-                    <li class="nav-item my-3 mx-sm-3">
-                        <x-nav-link-web href="{{ route('pageWork') }}" :active="request()->routeIs('pageWork')">Projects</x-nav-link-web>
-                    </li>
-                    <li class="nav-item my-3 mx-sm-3">
-                        <x-nav-link-web href="#">Contact</x-nav-link-web>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> --}}
     <div class="container p-sm-0 px-3 footer-content">
         <div class="row justify-content-between m-0">
             <div class="col-sm-8 col-12 my-sm-0 my-4 p-0" style="z-index: 2">

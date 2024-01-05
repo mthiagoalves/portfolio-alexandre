@@ -76,9 +76,15 @@
             font-size: 0.8rem;
         }
     }
+
+    .mySwiper .swiper-wrapper {
+        transition-timing-function: linear;
+        -webkit-transition-timing-function: linear !important;
+        -o-transition-timing-function: linear !important;
+    }
 </style>
 
-<div class="swiper-container mySwiper">
+<div class="swiper-container mySwiper receive-margin">
     <div class="swiper-wrapper">
         @foreach ($projects as $project)
             <div class="swiper-slide">
@@ -100,10 +106,30 @@
                 </div>
             </div>
         @endforeach
+        @foreach ($projects as $project)
+            <div class="swiper-slide">
+                <div class="slide-projects">
+                    <img src="https://dummyimage.com/580x750/4c6951/fff" alt=""
+                        class="img-fluid img-slide-projects">
+                    <div class="overflow">
+                        <div class="content p-5">
+                            <h3 class="title-project-overflow">{{ $project->title }}</h3>
+                            <p class="description-project-overflow d-sm-block d-none">{{ $project->description }}</p>
+                            <p class="description-project-overflow d-sm-none d-block">
+                                {{ strlen($project->description) > 210 ? substr($project->description, 0, 210) . '...' : $project->description }}
+                            </p>
+                        </div>
+                        <div class="col-sm-12 col-12 my-4 my-sm-3">
+                            <a href="#" class="btn-know-more p-2 px-4">Know More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
 
-        <div class="swiper-slide d-sm-block d-none">
+        {{-- <div class="swiper-slide d-sm-block d-none">
             <div class="slide-projects">
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

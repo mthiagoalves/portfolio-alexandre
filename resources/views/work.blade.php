@@ -125,6 +125,10 @@
 
     }
 
+    .fixed {
+        position: fixed;
+    }
+
     /* end card projects */
 </style>
 
@@ -134,7 +138,7 @@
             <div class="row justify-content-between m-0 mt-5">
                 <div class="col-sm-2 col-12 ">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
-                        <p class="title-work">
+                        <p class="title-work fixed">
                             Work
                         </p>
                     </div>
@@ -153,10 +157,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center align-items-center m-0 mt-sm-5 mt-3">
-                <div class="col-sm-2 col-12 d-none d-sm-block">
+            <div class="row justify-content-center align-items-start m-0 mt-sm-5 mt-3 receive">
+                <div class="col-sm-2 col-1 mt-3 d-none d-sm-block">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
-                        <a href="" class="btn-behance p-2 px-3">
+                        <a href="" class="btn-behance p-2 px-3 fixed">
                             Behance
                         </a>
                     </div>
@@ -249,6 +253,26 @@
             document.addEventListener('DOMContentLoaded', () => {
                 var navbarHeight = document.querySelector('.navbar').offsetHeight;
                 document.querySelector('.container-work').style.marginTop = navbarHeight * 2 + 'px';
+
+            //     window.addEventListener("scroll", function() {
+            //     var autoPickDiv = document.querySelector('.title-work');
+            //     var receiveDiv = document.querySelector('.receive');
+            //     var btnBehance = document.querySelector('.btn-behance');
+
+            //     var autoPickRect = autoPickDiv.getBoundingClientRect();
+            //     var receiveRect = receiveDiv.getBoundingClientRect();
+
+            //     // Adicione um valor de margem para determinar quando as divs estão próximas
+            //     var margin = -50;
+
+            //     if (autoPickRect.bottom - margin > receiveRect.top) {
+            //         // Adiciona a classe 'fixed' quando as divs estão próximas
+            //         btnBehance.classList.add('fixed');
+            //     } else {
+            //         // Remove a classe 'fixed' quando as divs não estão próximas
+            //         btnBehance.classList.remove('absolute');
+            //     }
+            // });
 
             });
 

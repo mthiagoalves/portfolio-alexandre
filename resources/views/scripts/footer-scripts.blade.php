@@ -21,14 +21,16 @@
     }
 
     var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 'auto',
+    slidesPerView: 3,
     spaceBetween: 15,
     freeMode: true,
+    loop: true,
+    speed: 5000,
     autoplay: {
-            delay: 2000,
+            delay: 0,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
         },
-    speed: 3000,
     grabCursor: true,
     breakpoints: {
         1500: {
@@ -49,15 +51,25 @@
     },
     });
 
-    var mySwiper = document.querySelector('.swiper-container').swiper;
+    if(window.location.pathname === '/') {
+        var mySwiper = document.querySelector('.swiper-container').swiper;
 
-    document.querySelector(".swiper-container").addEventListener("mouseenter", function () {
-        mySwiper.autoplay.stop();
-    });
+        document.querySelector(".swiper-container").addEventListener("mouseenter", function () {
+            mySwiper.autoplay.stop();
+            mySwiper.params.autoplay.delay = 0;
+            mySwiper.params.speed = 0;
+            console.log(mySwiper.params.speed);
 
-    document.querySelector(".swiper-container").addEventListener("mouseleave", function () {
-        mySwiper.autoplay.start();
-    });
+        });
+
+        document.querySelector(".swiper-container").addEventListener("mouseleave", function () {
+            mySwiper.autoplay.start();
+            mySwiper.params.autoplay.delay = 0;
+            mySwiper.params.speed = 5000;
+            console.log(mySwiper.params.speed);
+        });
+    }
+
 
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -84,7 +96,7 @@
                         loader.style.opacity = 0;
                     }, 2000);
                     setTimeout(function() {
-                        loader.style.display = 'none';
+                        loader.remove();
                         document.body.style.overflowY = 'visible';
                         executeAfterLoader();
                     }, 2500);
@@ -159,32 +171,6 @@
 
         }
 
-            // var divToTouch = document.querySelector('.text-lets-work-together');
-            // var footer = document.querySelector('.navbar-footer');
-
-            // function handleScroll() {
-            //     if (isElementInViewport(divToTouch)) {
-            //         footer.style.opacity = 1;
-            //         footer.style.pointerEvents = "all";
-            //     } else {
-            //         footer.style.opacity = 0;
-            //         footer.style.pointerEvents = "none";
-            //     }
-            // }
-
-            // window.addEventListener("scroll", handleScroll);
-
-            // function isElementInViewport(el) {
-            //     var rect = el.getBoundingClientRect();
-            //     return (
-            //         rect.top >= 0 &&
-            //         rect.left >= 0 &&
-            //         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            //         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            //     );
-            // }
-
-
         var navbarHeight = document.querySelector('.navbar').offsetHeight;
 
         if (window.innerWidth < 1450) {
@@ -203,7 +189,8 @@
 
             const newMarginLeftValue = parseFloat(marginLeftValue) + 12;
 
-            sliderDiv.style.marginLeft = `${newMarginLeftValue}px`;
+            sliderDiv.style.paddingLeft = `${newMarginLeftValue}px`;
+            sliderDiv.style.paddingRight = `${newMarginLeftValue}px`;
         }
     });
 </script>

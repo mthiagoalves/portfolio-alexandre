@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="container-fluid p-sm-0 margin-mb-80 receive-margin">
+        <div class="container-fluid p-sm-0 margin-mb-80">
             @include('components.slide-projects')
         </div>
 
