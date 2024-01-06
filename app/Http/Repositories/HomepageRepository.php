@@ -35,9 +35,7 @@ class HomepageRepository
 
         $gmtSign = ($offset >= 0) ? '+' : '-';
 
-        $gmtOffset = sprintf('%s%02d:%02d', $gmtSign, abs($offset) / 3600, abs($offset) % 3600 / 60);
-
-        $formattedDateTime = $now->format('h:i A') . ' - GMT' . $gmtOffset;
+        $formattedDateTime = $now->format('h:i A') . ' - GMT+1';
 
         return $formattedDateTime;
     }

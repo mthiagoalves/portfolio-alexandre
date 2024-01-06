@@ -212,6 +212,8 @@
 
     .opacity-navbar-local-time {
         opacity: 0;
+        position: absolute;
+        top: -30rem;
     }
 
     .gradient-transition-top,
@@ -223,12 +225,14 @@
 
     .gradient-transition-bottom {
         top: -2px;
+        left: 0;
         z-index: 1;
         background: linear-gradient(180deg, #01001b 0%, rgba(1, 0, 27, 0) 100%);
     }
 
     .gradient-transition-top {
         bottom: -2px;
+        left: 0;
         z-index: 2;
         background: linear-gradient(360deg, #01001b 0%, rgba(1, 0, 27, 0) 100%);
     }
@@ -247,8 +251,8 @@
     }
 
     .preloader {
-        height: 0;
-        opacity: 0;
+        height: 100vh;
+        opacity: 1;
         width: 100vw;
         position: fixed;
         z-index: 100;
@@ -368,7 +372,7 @@
     .located-in-pt {
         position: absolute;
         z-index: 3;
-        background-color: #3e3f436e;
+        background-color: #ffffff19;
         bottom: 45%;
         width: 18rem;
         height: 5.938rem;
@@ -502,12 +506,6 @@
         }
     }
 
-    /* @media (min-width: 1490px) {
-        .text-lets-work-together {
-            margin-top: 8rem;
-        }
-    } */
-
     @media (min-width: 1100px) {
         .img-located-in-pt img:hover {
             animation: rotate 8s linear infinite;
@@ -528,12 +526,29 @@
             border-radius: 1.563rem;
         }
 
+        .div-text-hello{
+            bottom: 10%;
+        }
+
+        .title-hello {
+            font-size: 9rem;
+        }
+
+        .text-hello,
+        .progress-text {
+            font-size: 1.5rem;
+        }
+
         .text-right-banner {
             bottom: 5%;
         }
 
         .text-name-main-banner {
             bottom: 15%;
+        }
+
+        .text-inside-banner{
+            bottom: 8%;
         }
 
         .text-name-main-banner p,
