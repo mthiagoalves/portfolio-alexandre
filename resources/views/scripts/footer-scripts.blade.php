@@ -2,75 +2,63 @@
 <script>
     function toggleNavbar() {
         var navbar = document.querySelector('.opacity-load-nav');
+        var navbarContent = document.querySelector('.navbar');
         var navbarToggler = document.querySelector('.navbar-toggler');
         var navbarTogglerLocalTIme = document.querySelector('.opacity-navbar-local-time');
 
         if (navbarToggler.classList.contains('collapsed')) {
-            navbar.style.background = 'transparent';
-            navbar.style.height = '';
+            navbarContent.style.background = 'transparent';
+            navbarContent.style.height = '';
             navbar.style.display = '';
-            navbarTogglerLocalTIme.style.opacity = '';
+            navbarTogglerLocalTIme.style.opacity = '0';
+            navbarTogglerLocalTIme.style.position = 'absolute';
+            navbarTogglerLocalTIme.style.top = '-500px';
 
         } else {
-            navbar.style.height = '100vh';
-            navbar.style.background = '#01001bfa';
+            navbarContent.style.height = '100vh';
+            navbarContent.style.background = '#01001bfa';
             navbar.style.display = 'flex';
-            navbar.style.alignItems = 'start';
+            navbar.style.alignItems = 'center';
             navbarTogglerLocalTIme.style.opacity = '1';
+            navbarTogglerLocalTIme.style.position = 'static';
+            navbarTogglerLocalTIme.style.marginBottom = '30px';
+
+            atualizarHora();
+
+            setInterval(atualizarHora, 1000);
         }
     }
 
     var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 15,
-    freeMode: true,
-    loop: true,
-    speed: 5000,
-    autoplay: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        freeMode: true,
+        loop: true,
+        speed: 5000,
+        autoplay: {
             delay: 0,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
         },
-    grabCursor: true,
-    breakpoints: {
-        1500: {
-            slidesPerView: 4
+        grabCursor: true,
+        breakpoints: {
+            1550: {
+                slidesPerView: 4
+            },
+            1200: {
+                slidesPerView: 3
+            },
+            850: {
+                slidesPerView: 2,
+            },
+            450: {
+                slidesPerView: 2,
+            },
+            250: {
+                slidesPerView: 1,
+            }
         },
-        1200: {
-            slidesPerView: 3
-        },
-        850: {
-            slidesPerView: 2,
-        },
-        450: {
-            slidesPerView: 2,
-        },
-        250: {
-            slidesPerView: 1,
-        }
-    },
     });
-
-    if(window.location.pathname === '/') {
-        var mySwiper = document.querySelector('.swiper-container').swiper;
-
-        document.querySelector(".swiper-container").addEventListener("mouseenter", function () {
-            mySwiper.autoplay.stop();
-            mySwiper.params.autoplay.delay = 0;
-            mySwiper.params.speed = 0;
-            console.log(mySwiper.params.speed);
-
-        });
-
-        document.querySelector(".swiper-container").addEventListener("mouseleave", function () {
-            mySwiper.autoplay.start();
-            mySwiper.params.autoplay.delay = 0;
-            mySwiper.params.speed = 5000;
-            console.log(mySwiper.params.speed);
-        });
-    }
-
-
 
     document.addEventListener("DOMContentLoaded", function() {
         var text = document.querySelector(".progress-text");
@@ -79,11 +67,14 @@
         const contentNav = document.querySelector(".opacity-load-nav");
         const contentBanner = document.querySelector(".opacity-load-banner");
         const contentLogo = document.querySelector(".navbar-brand");
+        const navbarToggle = document.querySelector(".navbar-toggler");
 
-        if (performance.navigation.type === 1 && window.location.pathname === '/') {
+        if (performance.navigation.type === 1 || !localStorage.getItem('firstVisit') && window.location.pathname === '/') {
+            localStorage.setItem('firstVisit', 'true');
             loader.style.height = '100vh';
             loader.style.opacity = 1;
             contentNav.style.opacity = 0;
+            navbarToggle.style.opacity = 0;
             contentLogo.style.opacity = 1;
             contentBanner.style.opacity = 0;
             var id = setInterval(frame, 70);
@@ -122,6 +113,7 @@
                         setTimeout(function() {
                             contentNav.style.opacity = 1;
                             contentBanner.style.opacity = 1;
+                            navbarToggle.style.opacity = 1;
                         }, 1500);
 
                     }
@@ -137,6 +129,7 @@
             var footer = document.querySelector('.navbar-footer');
 
             var lastScrollTop = 0;
+            var isTimeoutSet = false;
 
             window.addEventListener('scroll', function() {
                 var scrollTop = window.scrollY;
@@ -145,22 +138,40 @@
                     .offsetHeight) {
                     navbar.style.opacity = '0';
                     navbar.style.pointerEvents = 'none';
-                    if(window.location.pathname != '/work') {
+                    if(window.innerWidth < 756 && !isTimeoutSet) {
+                            setTimeout(function() {
+                                navbar.style.paddingTop = '3rem';
+                                isTimeoutSet = false;
+                            }, 1000);
+
+                            isTimeoutSet = true;
+                    }
+                    if (window.location.pathname != '/work') {
                         scrollDown.style.opacity = '0';
                     }
 
                 } else if (scrollTop < lastScrollTop) {
                     navbar.style.opacity = '0';
                     navbar.style.pointerEvents = 'none';
-                    if(window.location.pathname != '/work') {
+                    if (window.innerWidth < 756 && !isTimeoutSet) {
+                        setTimeout(function() {
+                            navbar.style.paddingTop = '1rem';
+                            isTimeoutSet = false;
+                        }, 1000);
+
+                        isTimeoutSet = true;
+                    }
+
+                    if (window.location.pathname != '/work') {
                         scrollDown.style.opacity = '0';
                     }
                 }
 
-                if (scrollTop === 0 || (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                if (scrollTop === 0 || (window.innerHeight + window.scrollY) >= document.body
+                    .offsetHeight) {
                     navbar.style.opacity = '1';
                     navbar.style.pointerEvents = 'all';
-                    if(window.location.pathname != '/work') {
+                    if (window.location.pathname != '/work') {
                         scrollDown.style.opacity = '1';
                     }
                 }
@@ -172,13 +183,21 @@
         }
 
         var navbarHeight = document.querySelector('.navbar').offsetHeight;
+        var divWidth = document.querySelector('.give-width').offsetWidth;
 
-        if (window.innerWidth < 1450) {
+        if (window.innerWidth < 756) {
+            document.querySelector('.footer-content').style.marginTop = 100 +
+                'px';
+            document.querySelector('.receive-width').style.width = divWidth +
+                'px';
+        } else if (window.innerWidth < 1450) {
             document.querySelector('.footer-content').style.marginTop = (navbarHeight + 15) +
                 'px';
-            } else {
+                document.querySelector('.receive-width').style.width = '';
+        } else {
             document.querySelector('.footer-content').style.marginTop = (navbarHeight + 51) +
                 'px';
+                document.querySelector('.fixed-footer-bottom').style.width = '';
         }
 
         if (window.innerWidth > 756 && window.location.pathname === '/') {
@@ -191,8 +210,35 @@
 
             sliderDiv.style.paddingLeft = `${newMarginLeftValue}px`;
             sliderDiv.style.paddingRight = `${newMarginLeftValue}px`;
+        } else if (window.innerWidth < 756 && window.location.pathname === '/') {
+            const sliderDiv = document.querySelector('.receive-margin');
+            sliderDiv.style.paddingLeft = `30px`;
+            sliderDiv.style.paddingRight = `30px`;
         }
     });
+
+    // Função para atualizar a hora no formato AM/PM
+    function atualizarHora() {
+        // Obtenha a referência do elemento <p> pelo ID
+        var paragrafo = document.querySelector(".text-hours");
+
+        // Obtenha a hora atual
+        var data = new Date();
+        var hora = data.getHours();
+        var minutos = data.getMinutes();
+
+        // Determine se é AM ou PM
+        var periodo = hora >= 12 ? "PM" : "AM";
+
+        // Converta a hora para o formato de 12 horas
+        hora = hora % 12 || 12;
+
+        // Formate os minutos e segundos para garantir que tenham dois dígitos
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+
+        // Atualize o conteúdo do <p> com a hora atual no formato AM/PM
+        paragrafo.innerHTML = hora + ":" + minutos + " " + periodo + ' - GMT+1';
+    }
 </script>
 
 <script>
