@@ -251,8 +251,8 @@
     }
 
     .preloader {
-        height: 100vh;
-        opacity: 1;
+        height: 0;
+        opacity: 0;
         width: 100vw;
         position: fixed;
         z-index: 100;
