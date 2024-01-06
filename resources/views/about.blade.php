@@ -17,14 +17,14 @@
     .text-skills,
     .text-languages {
         font-size: 2.25rem;
-        text-indent: 15rem;
-        line-height: 2.5rem;
+        line-height: normal;
         letter-spacing: .07rem;
     }
 
     .subtitle-work-experience {
         font-size: 1.25rem;
         font-weight: 500;
+        margin: 0;
     }
 
     .text-work-experience {
@@ -40,11 +40,28 @@
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
         color: #ffffff;
+        width: 18rem;
+        height: 2.625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .btn-lkd:hover,
     .btn-skills:hover {
-        background-color: #ffffff20
+        background-color: #ffffff20;
+    }
+
+    .btn {
+        transition: opacity 0.7s;
+    }
+
+    .btn-hidden {
+        opacity: 0;
+    }
+
+    .border-div {
+        border-top: 1px solid #ffffff20;
     }
 
     @media(min-width: 756px) {
@@ -69,17 +86,8 @@
         .text-skills,
         .text-languages {
             font-size: 1.3rem;
-            text-indent: 0;
             line-height: 1.8rem;
             letter-spacing: 0rem;
-        }
-
-        .subtitle-work-experience {
-            margin: 0;
-        }
-
-        .border-div {
-            border-top: 1px solid #ffffff20;
         }
     }
 </style>
@@ -98,15 +106,15 @@
                 <div class="col-sm-10 col-12 div-text-right-in-mobile">
                     <div class="col-11 p-2 col-sm-12 p-sm-0">
                         <p class="text-about-me pb-3">
-                            Hello, my name’s Alex, I’m a junior UI/UX Designer from Porto, Portugal. I'm excited to
-                            kickstart my career in user experience and interface design and make a real difference. My
-                            passion lies in crafting intuitive interfaces, conducting user research, and bringing
-                            creative concepts to life.
+                            Hello, my name’s Alexandre Piedade, I’m a junior UI/UX Designer from Porto, Portugal. I'm
+                            excited to kickstart my career in user experience and interface design and make a real
+                            difference. My passion lies in crafting intuitive interfaces, conducting user research, and
+                            bringing creative concepts to life.
                         </p>
                         <p class="text-about-me pb-3">
                             When I'm not immersed in the world of design, you'll find me exploring my love for
-                            motorcycles, traveling to new places, and trying to figure out how many designer handbags
-                            can actually fit in my closet.
+                            motorcycles, traveling to new places, or trying to figure out how many designer handbags can
+                            actually fit in my closet.
                         </p>
                     </div>
                 </div>
@@ -119,12 +127,12 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 p-0 pb-sm-0 pb-3">
+                <div class="col-sm-10 col-12 p-0 pb-sm-3 pb-3">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    2023 - 2022
+                                    2022 - 2023
                                 </p>
                             </div>
                         </div>
@@ -150,14 +158,14 @@
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    2022 - 2021
+                                    2021 - 2022
                                 </p>
                             </div>
                         </div>
                         <div class="col-sm-4 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    Wedding Media International & Porto de Ideias</p>
+                                    Wedding Media International <br> & Porto de Ideias</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-12">
@@ -169,12 +177,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    2021 - 2018
+                                    2018 - 2022
                                 </p>
                             </div>
                         </div>
@@ -192,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -215,12 +223,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    2021 - 2016
+                                    2016 - 2021
                                 </p>
                             </div>
                         </div>
@@ -238,12 +246,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-3 border-div">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    2018 - 2016
+                                    2016 - 2018
                                 </p>
                             </div>
                         </div>
@@ -261,7 +269,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5 text-sm-start text-center">
+                <div class="col-sm-10 col-12 offset-sm-2 mt-5 text-sm-start text-center">
                     <a href="#" class="btn-lkd p-2 px-3">
                         Wanna see my Linkedin?
                     </a>
@@ -294,7 +302,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-10 p-0">
+                <div class="col-10 p-0 pb-4">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -319,7 +327,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -331,7 +339,7 @@
                         <div class="col-sm-4 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
                                 <p class="subtitle-work-experience">
-                                    University of Porto <br> FBAUP / FEUP</p>
+                                    University of Porto FBAUP / FEUP</p>
                             </div>
                         </div>
                         <div class="col-sm-6 col-12">
@@ -343,7 +351,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -366,7 +374,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5">
+                <div class="col-sm-10 col-12 offset-sm-2 p-0 py-4 border-div">
                     <div class="row m-0">
                         <div class="col-sm-2 col-12">
                             <div class="col-12 p-2 col-sm-12 p-sm-0">
@@ -389,7 +397,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 p-0 mt-5 text-sm-start text-center">
+                <div class="col-sm-10 col-12 offset-sm-2 mt-5 text-sm-start text-center">
                     <a href="#" class="btn-skills p-2 px-3">
                         Wanna see some projects?
                     </a>
@@ -417,26 +425,40 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
+            const buttonLkd = document.querySelector('.btn-lkd');
+            const buttonSkills = document.querySelector('.btn-skills');
 
-                const buttonLkd = document.querySelector('.btn-lkd');
-
-                buttonLkd.onmouseover = function() {
+            buttonLkd.addEventListener('mouseover', function() {
+                buttonLkd.classList.add('btn-hidden');
+                setTimeout(() => {
                     buttonLkd.textContent = "Let's see my Linkedin 😎";
-                }
+                    buttonLkd.classList.remove('btn-hidden');
+                }, 300);
+            });
 
-                buttonLkd.onmouseout = function() {
-                    buttonLkd.textContent = "Wanna ses my Linkedin?";
-                }
-                const buttonSkills = document.querySelector('.btn-skills');
+            buttonLkd.addEventListener('mouseout', function() {
+                buttonLkd.classList.add('btn-hidden');
+                setTimeout(() => {
+                    buttonLkd.textContent = "Wanna see my Linkedin?";
+                    buttonLkd.classList.remove('btn-hidden');
+                }, 300);
+            });
 
-                buttonSkills.onmouseover = function() {
+            buttonSkills.addEventListener('mouseover', function() {
+                buttonSkills.classList.add('btn-hidden');
+                setTimeout(() => {
                     buttonSkills.textContent = "Let's see some projects 🎨";
-                }
+                    buttonSkills.classList.remove('btn-hidden');
+                }, 300);
+            });
 
-                buttonSkills.onmouseout = function() {
+            buttonSkills.addEventListener('mouseout', function() {
+                buttonSkills.classList.add('btn-hidden');
+                setTimeout(() => {
                     buttonSkills.textContent = "Wanna see some projects?";
-                }
-
+                    buttonSkills.classList.remove('btn-hidden');
+                }, 300);
+            });
         </script>
     </x-slot>
 </x-master-layout>
