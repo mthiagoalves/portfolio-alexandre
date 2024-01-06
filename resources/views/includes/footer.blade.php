@@ -26,6 +26,16 @@
         line-height: 23.44px;
     }
 
+    .text-footer a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: ease-in-out .7s;
+        display: inline-block;
+        pointer-events: all;
+    }
+
     .local-time-space {
         margin-top: 2rem;
     }
@@ -58,9 +68,11 @@
         display: inline-block;
     }
 
-    .text-socials p:hover {
+    .text-socials p:hover,
+    .text-footer a:hover {
         border-bottom-color: #ffffff;
     }
+
 
     @media(min-width: 756px) {
         .offset-sm-footer-1 {
@@ -72,12 +84,32 @@
         .local-time-space {
             margin-top: 0.8rem;
         }
+
+        .text-socials p {
+            margin: 0;
+        }
     }
 </style>
 
+@php
+    class Socials
+    {
+        public $name;
+        public $link;
+
+        public function __construct($name, $link)
+        {
+            $this->name = $name;
+            $this->link = $link;
+        }
+    }
+
+    $allSocials = [new Socials('BEHANCE', 'https://www.behance.net/AlexandrePiedade'), new Socials('LINKEDIN', 'https://www.linkedin.com/in/alexandre-piedade/')];
+@endphp
+
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
     <div class="container p-sm-0 px-3 footer-content">
-        <div class="row justify-content-between m-0">
+        <div class="row justify-content-between m-0 give-width">
             <div class="col-sm-8 col-12 my-sm-0 my-4 p-0" style="z-index: 2">
                 <div class="row">
                     <div class="col-sm-12 col-12 my-4 my-sm-3">
@@ -91,27 +123,29 @@
                         </a>
                     </div>
                     <div class="col-sm-12 col-12 my-4 my-sm-3">
-                        <a class="text-footer-hyperlink p-2 px-4" target="_blank" href=""
-                            title="Download CV"> Curriculum Vitae
+                        <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="" title="Download CV">
+                            Curriculum Vitae
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0 disable-events " style="z-index: 2">
+            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0 disable-events" style="z-index: 2">
                 <p class="text-footer">
-                    {!! $content->text_footer !!}
+                    Handcrafted by AP. using a sketchbook, Figma & millions of lines of code by <a
+                        href="https://www.linkedin.com/in/mthiagoalves/" target="_blank">THIAGO ALVES</a>
                 </p>
             </div>
             <div class="text-lets-work-together col-12 p-0 col-sm-12 d-none d-sm-block" style="z-index: 2">
                 <p>
                     let’s work together - let’s work together - let’s work together - let’s work together - let’s work
-                    together - let’s work together - let’s work together - let’s work together - let’s work together - let’s
+                    together - let’s work together - let’s work together - let’s work together - let’s work together -
+                    let’s
                     work together - let’s work together - let’s work together -
                 </p>
             </div>
         </div>
         <div class="container p-0 fixed-footer-bottom">
-            <div class="row justify-content-between m-0 mt-4">
+            <div class="row justify-content-between m-0 mt-4 receive-width">
                 <div class="col-12 col-sm-8 p-0 order-sm-1 my-sm-0 my-4 order-2 disable-events" style="z-index: 2">
                     <div class="row justify-content-between align-items-end m-0">
                         <div class="col-8 p-0">
@@ -123,7 +157,7 @@
                             </p>
                         </div>
                         <div class="col-4 mt-sm-3 text-end d-block d-sm-none">
-                            <p>©2023</p>
+                            <p>©2024</p>
                         </div>
                     </div>
                 </div>
@@ -133,17 +167,17 @@
                     </p>
                     <div class="col-12">
                         <div class="row align-items-center m-0">
-                            @foreach ($socials as $social)
+                            @foreach ($allSocials as $social)
                                 <div class="col-4 p-0 mr-2">
                                     <a class="text-socials" href="{{ $social->link }}" target="_blank">
                                         <p>
-                                            {{ $social->social_name }}
+                                            {{ $social->name }}
                                         </p>
                                     </a>
                                 </div>
                             @endforeach
                             <div class="col-4 p-0 mr-2 d-none d-sm-block disable-events">
-                                <p>©2023</p>
+                                <p>©2024</p>
                             </div>
                         </div>
                     </div>

@@ -4,10 +4,10 @@
             <div class="col-12 p-0 title-hello">
                 <p class="">Hello</p>
             </div>
-            <div class="col-9 p-0">
+            <div class="col-sm-9 col-10 p-0">
                 <p class="text-hello">We're almost there</p>
             </div>
-            <div class="col-3 p-0">
+            <div class="col-sm-3 col-2 p-0">
                 <p class="progress-text">0%</p>
             </div>
         </div>

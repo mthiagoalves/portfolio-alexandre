@@ -39,8 +39,8 @@
             @endif
             <div class="text-name-main-banner">
                 <p>
-                    Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade -
-                    Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre - Piedade - Alexandre
+                    Piedade Alexandre - Piedade Alexandre - Piedade Alexandre - Piedade Alexandre - Piedade -
+                    Alexandre - Piedade Alexandre - Piedade Alexandre - Piedade Alexandre - Piedade Alexandre
                 </p>
             </div>
             @if (Route::is('pageHomepage'))
