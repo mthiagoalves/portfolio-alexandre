@@ -11,7 +11,7 @@
     }
 
     .text-work {
-        font-size: 2.25rem;
+        font-size: 1.5rem;
         line-height: 2.5rem;
         letter-spacing: .07rem;
     }
@@ -20,10 +20,10 @@
     .btn-projects {
         text-decoration: none;
         font-size: 1.25rem;
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
-        color: #ffffff;
+        color: #EBEBEB;
         background-color: transparent;
     }
 
@@ -36,7 +36,7 @@
 
     .btn-behance:hover,
     .btn-projects:hover {
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     .fixed {
@@ -75,7 +75,7 @@
     }
 
     .title-project-overflow {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1.3rem;
         font-weight: 500;
         letter-spacing: 0.063rem;
@@ -83,17 +83,17 @@
     }
 
     .description-project-overflow {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1rem;
         letter-spacing: .5px;
         text-align: start;
     }
 
     .btn-know-more {
-        color: #ffffff;
+        color: #EBEBEB;
         text-decoration: none;
         font-size: 1.25rem;
-        border: 1px solid #ffffff;
+        border: 1px solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
         position: absolute;
@@ -106,16 +106,16 @@
     }
 
     .btn-know-more:hover {
-        border: 1px solid #ffffff;
+        border: 1px solid #EBEBEB;
         border-radius: 1.563rem;
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     .tag-projects-overflow {
-        color: #ffffff;
+        color: #EBEBEB;
         text-decoration: none;
         font-size: 1rem;
-        border: 1px solid #ffffff;
+        border: 1px solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
     }
@@ -305,7 +305,7 @@
         <div class="col-12 p-2 col-sm-12 p-sm-0 text-center mt-4">
             <a class="btn-projects p-2 px-3 demo-stock" style="cursor: pointer" data-toggle="collapse"
                 data-target="#demo-stock">
-                Let's see more projects ⌛
+                Want to see more projects?
             </a>
         </div>
         </div>

@@ -14,7 +14,8 @@
         <div class="collapse navbar-collapse justify-content-sm-end justify-content-center opacity-load-nav" id="navbarNav">
             <ul class="navbar-nav text-center">
                 <li class="nav-item my-3 mx-sm-3 d-block d-sm-none">
-                    <a aria-current="page" href="{{ route('pageHomepage') }}">Home</a>
+                    <x-nav-link-web aria-current="page" href="{{ route('pageHomepage') }}"
+                        :active="request()->routeIs('pageHomepage')">Home</x-nav-link-web>
                 </li>
                 <li class="nav-item my-3 mx-sm-3">
                     <x-nav-link-web aria-current="page" href="{{ route('pageAbout') }}"
@@ -39,7 +40,7 @@
                     09:00 </p>
             </div>
             <div class="col-4 mt-sm-3 text-end">
-                <p>©2023</p>
+                <p>©2024</p>
             </div>
         </div>
     </div>

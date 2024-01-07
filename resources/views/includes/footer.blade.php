@@ -1,34 +1,34 @@
 <style>
     .text-footer-hyperlink {
-        color: #ffffff;
+        color: #EBEBEB;
         text-decoration: none;
         font-size: 1.25rem;
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
     }
 
     .text-footer-hyperlink:hover {
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     .text-footer-hyperlink i {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1rem;
     }
 
     .text-footer {
-        color: #ffffff;
-        font-size: 20px;
+        color: #EBEBEB;
+        font-size: 1rem;
         font-weight: 300;
         line-height: 23.44px;
     }
 
     .text-footer a {
         text-decoration: none;
-        color: #ffffff;
+        color: #EBEBEB;
         font-weight: 500;
         border-bottom: 1px solid transparent;
         transition: ease-in-out .7s;
@@ -41,20 +41,20 @@
     }
 
     .sample-text {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1rem;
         font-weight: 300;
         margin-bottom: 1rem;
     }
 
     .text-hours {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1.2rem;
         font-weight: 500;
     }
 
     .text-socials {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1.2rem;
         font-weight: 500;
         border-bottom: 1px solid transparent;
@@ -70,7 +70,7 @@
 
     .text-socials p:hover,
     .text-footer a:hover {
-        border-bottom-color: #ffffff;
+        border-bottom-color: #EBEBEB;
     }
 
 
@@ -110,26 +110,26 @@
 <div class="container-fluid pt-4 pb-sm-4 pb-3 p-0 px-sm-0 px-1 container-footer" id="container-footer">
     <div class="container p-sm-0 px-3 footer-content">
         <div class="row justify-content-between m-0 give-width">
-            <div class="col-sm-8 col-12 my-sm-0 my-4 p-0" style="z-index: 2">
+            <div class="col-sm-8 col-12 my-sm-0 p-0" style="z-index: 2">
                 <div class="row">
-                    <div class="col-sm-12 col-12 my-4 my-sm-3">
+                    <div class="col-sm-12 col-12 my-3 my-sm-3">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="mailto:{{ $content->email }}"
                             title="E-mail: {{ $content->email }}"> {{ $content->email }}
                         </a>
                     </div>
-                    <div class="col-sm-12 col-12 my-4 my-sm-3">
-                        <a class="text-footer-hyperlink p-2 px-4" target="_blank" href=""
+                    <div class="col-sm-12 col-12 my-3 my-sm-3">
+                        <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="https://w.app/s7X9D8"
                             title="Phone number: +351 913 748 996" style="font-weight: 300"> {!! $content->phone !!}
                         </a>
                     </div>
-                    <div class="col-sm-12 col-12 my-4 my-sm-3">
+                    <div class="col-sm-12 col-12 my-3 my-sm-3">
                         <a class="text-footer-hyperlink p-2 px-4" target="_blank" href="" title="Download CV">
                             Curriculum Vitae
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-12 p-0 my-3 my-sm-0 disable-events" style="z-index: 2">
+            <div class="col-sm-3 col-9 p-0 px-1 my-5 my-sm-0 disable-events" style="z-index: 2">
                 <p class="text-footer">
                     Handcrafted by AP. using a sketchbook, Figma & millions of lines of code by <a
                         href="https://www.linkedin.com/in/mthiagoalves/" target="_blank">THIAGO ALVES</a>
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 col-12 p-0 my-sm-0 my-4 order-sm-2 order-1" style="z-index: 2">
+                <div class="col-sm-3 col-12 p-0 my-sm-0 order-sm-2 order-1" style="z-index: 2">
                     <p class="sample-text">
                         Let's connect
                     </p>
@@ -176,7 +176,7 @@
                                     </a>
                                 </div>
                             @endforeach
-                            <div class="col-4 p-0 mr-2 d-none d-sm-block disable-events">
+                            <div class="col-4 p-0 mr-2 d-none d-sm-block disable-events visible-text">
                                 <p>©2024</p>
                             </div>
                         </div>

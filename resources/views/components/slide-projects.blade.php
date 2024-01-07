@@ -13,7 +13,7 @@
         width: 100%;
         height: 100%;
         top: 0;
-        background-color: #2024238a;
+        background-color: #202423d6;
         border-radius: .9rem;
         transition: ease-in-out .7s;
     }
@@ -27,7 +27,7 @@
     }
 
     .title-project-overflow {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1.3rem;
         font-weight: 500;
         letter-spacing: 0.063rem;
@@ -35,7 +35,7 @@
     }
 
     .description-project-overflow {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 1rem;
         letter-spacing: .5px;
         text-align: start;
@@ -43,10 +43,10 @@
 
     .btn-know-more {
         max-height: 42px;
-        color: #ffffff;
+        color: #EBEBEB;
         text-decoration: none;
         font-size: 1.25rem;
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
         position: absolute;
@@ -57,16 +57,16 @@
     }
 
     .btn-know-more:hover {
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     .tag-projects-overflow {
-        color: #ffffff;
+        color: #EBEBEB;
         text-decoration: none;
         font-size: .9rem;
-        border: 1px solid #ffffff;
+        border: 1px solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
     }

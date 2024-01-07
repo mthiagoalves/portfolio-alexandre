@@ -19,10 +19,9 @@
             navbarContent.style.background = '#01001bfa';
             navbar.style.display = 'flex';
             navbar.style.alignItems = 'center';
+            navbar.style.marginTop = '5rem';
             navbarTogglerLocalTIme.style.opacity = '1';
             navbarTogglerLocalTIme.style.position = 'static';
-            navbarTogglerLocalTIme.style.marginBottom = '30px';
-
             atualizarHora();
 
             setInterval(atualizarHora, 1000);
@@ -70,52 +69,42 @@
         const navbarToggle = document.querySelector(".navbar-toggler");
 
         if (performance.navigation.type === 1 || !localStorage.getItem('firstVisit') && window.location.pathname === '/') {
-            localStorage.setItem('firstVisit', 'true');
-            loader.style.height = '100vh';
-            loader.style.opacity = 1;
-            contentNav.style.opacity = 0;
-            navbarToggle.style.opacity = 0;
-            contentLogo.style.opacity = 1;
-            contentBanner.style.opacity = 0;
-            var id = setInterval(frame, 70);
+            if(window.location.pathname === '/') {
+                localStorage.setItem('firstVisit', 'true');
+                loader.style.height = '100vh';
+                loader.style.opacity = 1;
+                contentNav.style.opacity = 0;
+                navbarToggle.style.opacity = 0;
+                contentLogo.style.opacity = 1;
+                contentBanner.style.opacity = 0;
+                var id = setInterval(frame, 6);
 
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
 
-                    setTimeout(function() {
-                        loader.style.opacity = 0;
-                    }, 2000);
-                    setTimeout(function() {
-                        loader.remove();
-                        document.body.style.overflowY = 'visible';
-                        executeAfterLoader();
-                    }, 2500);
-                } else {
-                    width++;
-                    text.style.opacity = 1;
-                    if (width <= 33) {
-                        if (width > 20) {
-                            text.style.opacity = 0;
-                        }
-
-                    } else if (width > 33 && width < 93) {
-                        if (width > 66 && width < 93) {
-                            text.style.opacity = 0;
-                        }
-                    } else {
-                        text.style.opacity = 1;
-                    }
-                    text.innerHTML = width + '%';
-                    document.body.style.overflowY = 'hidden';
-
-                    if (width == 100) {
                         setTimeout(function() {
-                            contentNav.style.opacity = 1;
-                            contentBanner.style.opacity = 1;
-                            navbarToggle.style.opacity = 1;
-                        }, 1500);
+                            loader.style.opacity = 0;
+                        }, 2000);
+                        setTimeout(function() {
+                            loader.remove();
+                            document.body.style.overflowY = 'visible';
+                            executeAfterLoader();
+                        }, 2500);
+                    } else {
+                        width++;
+                        text.style.opacity = 1;
+                        text.innerHTML = width + '%';
+                        document.body.style.overflowY = 'hidden';
 
+                        if (width == 100) {
+                            setTimeout(function() {
+                                contentNav.style.opacity = 1;
+                                contentBanner.style.opacity = 1;
+                                navbarToggle.style.opacity = 1;
+                            }, 1500);
+
+                        }
                     }
                 }
             }
@@ -167,15 +156,25 @@
                     }
                 }
 
-                if (scrollTop === 0 || (window.innerHeight + window.scrollY) >= document.body
-                    .offsetHeight) {
+                var textFooter = document.querySelector('.visible-text');
+                var rect = textFooter.getBoundingClientRect();
+
+
+                if (scrollTop === 0 || (window.innerHeight + scrollTop) >= document.documentElement.scrollHeight) {
                     navbar.style.opacity = '1';
                     navbar.style.pointerEvents = 'all';
-                    if (window.location.pathname != '/work') {
+                    if (window.location.pathname !== '/work') {
                         scrollDown.style.opacity = '1';
                     }
                 }
 
+                if (rect.bottom <= window.innerHeight) {
+                        navbar.style.opacity = '1';
+                        navbar.style.pointerEvents = 'all';
+                        if (window.location.pathname !== '/work') {
+                            scrollDown.style.opacity = '1';
+                        }
+                    }
 
                 lastScrollTop = scrollTop;
             });
@@ -217,26 +216,19 @@
         }
     });
 
-    // Função para atualizar a hora no formato AM/PM
     function atualizarHora() {
-        // Obtenha a referência do elemento <p> pelo ID
         var paragrafo = document.querySelector(".text-hours");
 
-        // Obtenha a hora atual
         var data = new Date();
         var hora = data.getHours();
         var minutos = data.getMinutes();
 
-        // Determine se é AM ou PM
         var periodo = hora >= 12 ? "PM" : "AM";
 
-        // Converta a hora para o formato de 12 horas
         hora = hora % 12 || 12;
 
-        // Formate os minutos e segundos para garantir que tenham dois dígitos
         minutos = minutos < 10 ? "0" + minutos : minutos;
 
-        // Atualize o conteúdo do <p> com a hora atual no formato AM/PM
         paragrafo.innerHTML = hora + ":" + minutos + " " + periodo + ' - GMT+1';
     }
 </script>
@@ -6263,21 +6255,16 @@ void main() {
             return this.viewSize[0] / window.innerWidth
         }
     }
-    // Criar instâncias apenas se os elementos estiverem presentes na página
     const xu1 = new Xu(".c1");
     const xu2 = new Xu(".c2");
     const xu3 = new Xu(".c3");
 
-    // Criar uma lista de instâncias para fácil iteração
     const xuInstances = [xu1, xu2, xu3].filter(instance => instance);
 
-    // Iterar sobre as instâncias e realizar a operação desejada
     xuInstances.forEach((xuInstance) => {
-        // Realizar a operação desejada em cada instância
         Exemplo: xuInstance.post.isActive = true;
     });
 
-    // Iniciar a renderização para cada instância
     xuInstances.forEach((xuInstance) => {
         xuInstance.render();
     });

@@ -16,7 +16,7 @@
     .text-about-me,
     .text-skills,
     .text-languages {
-        font-size: 2.25rem;
+        font-size: 1.8rem;
         line-height: normal;
         letter-spacing: .07rem;
     }
@@ -36,10 +36,10 @@
     .btn-skills {
         text-decoration: none;
         font-size: 1.25rem;
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
         transition: ease-in-out 0.7s;
-        color: #ffffff;
+        color: #EBEBEB;
         width: 18rem;
         height: 2.625rem;
         display: flex;
@@ -49,7 +49,7 @@
 
     .btn-lkd:hover,
     .btn-skills:hover {
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     .btn {
@@ -61,7 +61,7 @@
     }
 
     .border-div {
-        border-top: 1px solid #ffffff20;
+        border-top: 1px solid #EBEBEB20;
     }
 
     @media(min-width: 756px) {
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-between m-0 mt-5">
+            <div class="row justify-content-between margin-y-80">
                 <div class="col-sm-2 col-12">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
                         <p class="title-work-experience">
@@ -269,13 +269,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 mt-5 text-sm-start text-center">
+                <div class="col-sm-10 col-12 offset-sm-2 mt-4 text-sm-start text-center">
                     <a href="#" class="btn-lkd p-2 px-3">
-                        Wanna see my Linkedin?
+                        Want to see my Linkedin?
                     </a>
                 </div>
             </div>
-            <div class="row justify-content-between m-0 mt-5">
+            <div class="row justify-content-between margin-y-80">
                 <div class="col-sm-2 col-12 ">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
                         <p class="title-skills">
@@ -294,7 +294,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-between m-0 mt-5">
+            <div class="row justify-content-between margin-y-80">
                 <div class="col-sm-2 col-12">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
                         <p class="title-work-experience">
@@ -397,13 +397,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-10 col-12 offset-sm-2 mt-5 text-sm-start text-center">
+                <div class="col-sm-10 col-12 offset-sm-2 mt-4 text-sm-start text-center">
                     <a href="#" class="btn-skills p-2 px-3">
                         Wanna see some projects?
                     </a>
                 </div>
             </div>
-            <div class="row justify-content-between m-0 mt-5">
+            <div class="row justify-content-between margin-y-80">
                 <div class="col-sm-2 col-12 ">
                     <div class="col-12 p-2 col-sm-12 p-sm-0">
                         <p class="title-languages">
@@ -414,7 +414,7 @@
                 <div class="col-sm-10 col-12">
                     <div class="col-11 p-2 col-sm-12 p-sm-0">
                         <p class="text-languages pb-3">
-                            <b>Portuguese</b> - Native · <b>English</b> - C1 · <b>Spanish</b> - B2
+                            Portuguese · English · Spanish
                         </p>
                     </div>
                 </div>
@@ -439,7 +439,7 @@
             buttonLkd.addEventListener('mouseout', function() {
                 buttonLkd.classList.add('btn-hidden');
                 setTimeout(() => {
-                    buttonLkd.textContent = "Wanna see my Linkedin?";
+                    buttonLkd.textContent = "Want to see my Linkedin?";
                     buttonLkd.classList.remove('btn-hidden');
                 }, 300);
             });
@@ -455,7 +455,7 @@
             buttonSkills.addEventListener('mouseout', function() {
                 buttonSkills.classList.add('btn-hidden');
                 setTimeout(() => {
-                    buttonSkills.textContent = "Wanna see some projects?";
+                    buttonSkills.textContent = "Want to see some projects?";
                     buttonSkills.classList.remove('btn-hidden');
                 }, 300);
             });

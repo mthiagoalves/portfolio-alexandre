@@ -36,7 +36,7 @@
     body {
         overflow-x: hidden;
         background-color: #01001b;
-        color: #ffffff;
+        color: #EBEBEB;
     }
 
     ::-webkit-scrollbar {
@@ -44,7 +44,7 @@
     }
 
     ::-webkit-scrollbar-track {
-        background-color: #ffffff;
+        background-color: #EBEBEB;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -65,7 +65,7 @@
         --color3: 181, 0, 100;
         --color4: 181, 0, 100;
         --color5: 189, 0, 68;
-        --color-white: #ffffff;
+        --color-white: #EBEBEB;
         --color-interactive: 245, 123, 113;
         --circle-size: 80%;
         --circle-interactive-size: 40%;
@@ -237,9 +237,14 @@
         background: linear-gradient(360deg, #01001b 0%, rgba(1, 0, 27, 0) 100%);
     }
 
+    .navbar-toggler-icon {
+        width: 2rem;
+        background-size: 70%;
+    }
+
     .margin-y-80 {
-        margin-top: 5rem;
-        margin-bottom: 5rem;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
     }
 
     .margin-mb-80 {
@@ -290,7 +295,7 @@
     }
 
     .progress-text {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 3.5rem;
         margin: 0;
         text-align: right;
@@ -308,7 +313,7 @@
     }
 
     .title-hello {
-        color: #ffffff;
+        color: #EBEBEB;
         font-size: 12rem;
         margin: 0;
         line-height: .8;
@@ -334,7 +339,7 @@
     }
 
     .nav-item a {
-        color: #ffffff;
+        color: #EBEBEB;
         text-decoration: none;
         font-size: 1.25rem;
         padding: 0.5rem 1rem;
@@ -344,15 +349,15 @@
     }
 
     .nav-item a:hover {
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     a.link-navbar.active {
-        border: 0.063rem solid #ffffff;
+        border: 0.063rem solid #EBEBEB;
         border-radius: 1.563rem;
-        background-color: #ffffff20;
+        background-color: #EBEBEB20;
     }
 
     .navbar-toggler:focus {
@@ -372,7 +377,7 @@
     .located-in-pt {
         position: absolute;
         z-index: 3;
-        background-color: #ffffff19;
+        background-color: #EBEBEB19;
         bottom: 45%;
         width: 18rem;
         height: 5.938rem;
@@ -383,10 +388,10 @@
     .text-right-banner {
         position: absolute;
         z-index: 3;
-        bottom: 47%;
-        right: 3%;
-        color: #ffffff;
-        font-size: 2rem;
+        bottom: 45%;
+        right: 7%;
+        color: #EBEBEB;
+        font-size: 1.8rem;
         line-height: 2.2rem;
     }
 
@@ -410,7 +415,7 @@
         position: absolute;
         top: 1.875rem;
         left: 4.5rem;
-        color: #ffffff;
+        color: #EBEBEB;
         line-height: 1rem;
         text-align: start;
         font-size: 0.96rem;
@@ -427,11 +432,11 @@
     }
 
     .text-name-main-banner p {
-        color: #ffffff;
+        color: #EBEBEB;
         text-align: center;
         font-size: 10rem;
         transition: all 0.5s;
-        animation: sliderTextLeft 45s linear infinite;
+        animation: sliderTextLeft 55s linear infinite;
     }
 
     .text-inside-banner {
@@ -444,11 +449,11 @@
     }
 
     .text-inside-banner p {
-        color: #ffffff;
+        color: #EBEBEB;
         text-align: center;
         font-size: 3.5rem;
         transition: all 0.5s;
-        animation: sliderTextRight 45s linear infinite;
+        animation: sliderTextRight 55s linear infinite;
     }
 
     .text-scroll-banner {
@@ -463,7 +468,7 @@
     }
 
     .text-scroll-banner p {
-        color: #ffffff;
+        color: #EBEBEB;
         text-align: center;
         font-size: 1rem;
         line-height: 1rem;
@@ -491,7 +496,7 @@
     }
 
     .text-lets-work-together p {
-        color: #ffffff;
+        color: #EBEBEB;
         text-align: center;
         font-size: 13rem;
         line-height: 15.625rem;
@@ -514,7 +519,7 @@
 
     @media (max-width: 756px) {
         .nav-item a {
-            border: 0.063rem solid #ffffff;
+            border: 0.063rem solid #EBEBEB;
         }
 
         .navbar-toggler-icon {
@@ -522,11 +527,11 @@
         }
 
         .navbar-toggler {
-            border: 0.063rem solid #ffffff;
+            border: 0.063rem solid #EBEBEB;
             border-radius: 1.563rem;
         }
 
-        .div-text-hello{
+        .div-text-hello {
             bottom: 10%;
         }
 
@@ -544,11 +549,20 @@
         }
 
         .text-name-main-banner {
-            bottom: 15%;
+            bottom: 18%;
         }
 
-        .text-inside-banner{
+        .text-inside-banner {
             bottom: 8%;
+        }
+
+        .text-name-main-banner p {
+            animation: sliderTextLeft 45s linear infinite;
+        }
+
+
+        .text-inside-banner p {
+            animation: sliderTextRight 45s linear infinite;
         }
 
         .text-name-main-banner p,

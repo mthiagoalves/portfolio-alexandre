@@ -7,7 +7,7 @@
 @section('style-include')
     <style>
         .text-left-after-banner {
-            font-size: 2.375rem;
+            font-size: 2rem;
             line-height: 3.135rem;
         }
 
